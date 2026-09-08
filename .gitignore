@@ -1,0 +1,15 @@
+# Entorno virtual de Python
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Salidas y datos
+output.json
+*.log
+
+# Editor y Sistema Operativo (Windows)
+.vscode/
+Thumbs.db
+ehthumbs.db
+desktop.ini
