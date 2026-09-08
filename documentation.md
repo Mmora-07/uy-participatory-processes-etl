@@ -1,0 +1,1 @@
+Este archivo contiene desiciones tomadas y hallazgos en el camino para tener trazabilidad 
