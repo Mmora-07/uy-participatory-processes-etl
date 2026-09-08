@@ -26,9 +26,9 @@ pytest tests/ -v
 
 Esta sección resume las decisiones de mapeo más relevantes. El detalle completo — con los conteos exactos sobre las 86 fichas reales que sustentan cada una — está en [documentation.md](documentation.md).
 
-- **`nombre_corto`:** no existe un subtítulo distinto del título principal en ninguna ficha real. Se trunca `nombre_largo` a 80 caracteres, cortando en el último espacio completo (nunca a mitad de palabra) y agregando "…" cuando hubo corte. Validado con un caso real de 274 caracteres.
+- **`nombre_corto`:** el título no tiene un subtítulo corto y consistente que sirva como fuente alternativa (existe un elemento de "bajada" bajo el título, pero es texto libre que a veces es un hashtag de campaña o un eslogan genérico — no una versión corta del nombre; se documenta en `documentation.md` por qué se descartó como fuente). Se trunca `nombre_largo` a 80 caracteres, cortando en el último espacio completo (nunca a mitad de palabra) y agregando "…" cuando hubo corte. Validado con un caso real de 274 caracteres.
 - **Fechas:** se parsean del string `"DD mon YYYY / DD mon YYYY"` (meses abreviados en español) con un diccionario manual, sin depender de `locale` del sistema. **~16% de los procesos reales (14 de 86) no tienen bloque de fechas en el HTML** — no es un caso teórico: son procesos con una plantilla distinta (fases con fechas propias en vez de un rango único). En esos casos `fecha_inicio`/`fecha_fin` quedan en `null`, nunca string vacío.
-- **`entidad` (Grupo promotor):** **~27% de los procesos reales (23 de 86) no tienen ese bloque** → `null` explícito. También es un caso frecuente, no de laboratorio.
+- **`entidad` (Grupo promotor):** fuente primaria es el bloque `"Grupo promotor"`, ausente en ~27% de los procesos reales (23 de 86). En esos casos hay fallback a la bajada del título (`hero-slogan`), donde la entidad promotora también se muestra en pantalla aunque no esté en el bloque estructurado — bug real encontrado por inspección manual y corregido (ver Fase 5.1 en `documentation.md`). Con el fallback, `entidad` queda en `null` solo si ninguna de las dos fuentes existe, algo que no se observó en ninguna de las 86 fichas reales.
 - **`formulario_url` con múltiples componentes:** se toma el primer enlace `.participatory-space__nav-item` del DOM (60 de 86 procesos tienen más de uno, hasta 7 en un caso). Se asume que el orden del DOM refleja el orden de prioridad definido al armar el proceso — no hay forma de confirmar esto desde afuera del admin de Decidim, queda documentado como supuesto. El campo opcional `componentes` guarda la lista completa para no perder el resto.
 - **Vía alternativa descartada — API/open data:** el sitio expone descarga de datos abiertos (`/open-data/download`), pero no se usó: la consigna pide explícitamente el flujo de scraping sobre las fichas HTML, y el dataset abierto no necesariamente expone los mismos 7 campos con el mismo criterio de mapeo (título corto, `formulario_url` por componente) que se pide acá.
 - **Slugs con mayúscula:** el sitio real tiene slugs no-lowercase (`Homicidios`, `Consulta65`...`Consulta70`, `quinto-planGA`). No se normalizan en ningún punto del pipeline — lowercasearlos rompería la URL real y la deduplicación.
@@ -44,7 +44,7 @@ models.py                Proceso / Componente (pydantic) + serialización a dict
 output.py                 Escritura del JSON final.
 utils/http_client.py       Sesión HTTP, reintentos con backoff exponencial, delay entre requests.
 utils/dates.py               Parseo de fechas es-UY (diccionario manual de meses).
-utils/text.py                 Normalización de espacios y truncado de nombre_corto.
+utils/text.py                 Extracción/normalización de texto (separador entre nodos) y truncado de nombre_corto.
 utils/logging_config.py        Configuración centralizada del logger.
 tests/                           Tests del parser contra fixtures HTML reales.
 ```

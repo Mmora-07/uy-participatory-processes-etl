@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 
 from config import (
     BASE_URL,
+    HERO_SLOGAN_SELECTOR,
     HERO_TITLE_SELECTOR,
     METADATA_ITEM_SELECTOR,
     METADATA_ITEM_TITLE_SELECTOR,
@@ -22,7 +23,7 @@ from config import (
 )
 from models import Componente, Proceso
 from utils.dates import parse_rango_fechas
-from utils.text import normalize_whitespace, truncate
+from utils.text import extract_text, normalize_whitespace, truncate
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +35,7 @@ def _extraer_nombre_largo(soup: BeautifulSoup) -> str:
     """
     hero = soup.select_one(HERO_TITLE_SELECTOR)
     if hero:
-        return normalize_whitespace(hero.get_text())
+        return extract_text(hero)
 
     og_title = soup.find("meta", property="og:title")
     if og_title and og_title.get("content"):
@@ -58,12 +59,33 @@ def _extraer_metadata_item(soup: BeautifulSoup, label: str) -> str | None:
     """
     for item in soup.select(METADATA_ITEM_SELECTOR):
         title_span = item.select_one(METADATA_ITEM_TITLE_SELECTOR)
-        if not title_span or normalize_whitespace(title_span.get_text()) != label:
+        if not title_span or extract_text(title_span) != label:
             continue
         value_span = title_span.parent.find_next_sibling("span")
         if value_span:
-            return normalize_whitespace(value_span.get_text())
+            return extract_text(value_span)
     return None
+
+
+def _extraer_entidad(soup: BeautifulSoup) -> str | None:
+    """Grupo promotor declarado en el bloque de metadata (fuente primaria,
+    estructurada con una etiqueta explícita). En ~27% de las fichas reales
+    ese bloque no existe, pero la entidad promotora igual aparece en pantalla
+    como bajada del título (.participatory-space__hero-slogan) -> fallback.
+    Ninguna ficha real observada carece de ambas fuentes a la vez, pero el
+    contrato sigue siendo None si eso llegara a pasar.
+
+    Nota: el fallback es texto libre sin estructura fija -- a veces trae
+    prefijos como "Consulta pública ||" en vez de solo el nombre de la
+    entidad (ver documentation.md, Fase 5.1). Se documenta como limitación
+    conocida en vez de intentar recortarlo con heurísticas frágiles.
+    """
+    entidad = _extraer_metadata_item(soup, METADATA_LABEL_ENTIDAD)
+    if entidad:
+        return entidad
+
+    slogan = soup.select_one(HERO_SLOGAN_SELECTOR)
+    return extract_text(slogan) if slogan else None
 
 
 def _extraer_componentes(soup: BeautifulSoup) -> list[Componente]:
@@ -74,7 +96,7 @@ def _extraer_componentes(soup: BeautifulSoup) -> list[Componente]:
             continue
         componentes.append(
             Componente(
-                texto=normalize_whitespace(nav_item.get_text()),
+                texto=extract_text(nav_item),
                 url=urljoin(BASE_URL, href),
             )
         )
@@ -87,7 +109,7 @@ def parse_ficha(html: str, slug: str, url: str) -> Proceso:
     nombre_largo = _extraer_nombre_largo(soup)
     fechas_raw = _extraer_metadata_item(soup, METADATA_LABEL_FECHAS)
     fecha_inicio, fecha_fin = parse_rango_fechas(fechas_raw)
-    entidad = _extraer_metadata_item(soup, METADATA_LABEL_ENTIDAD)
+    entidad = _extraer_entidad(soup)
     componentes = _extraer_componentes(soup)
 
     return Proceso(

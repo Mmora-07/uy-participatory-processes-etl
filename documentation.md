@@ -18,8 +18,8 @@
 
 ### `nombre_largo` / `nombre_corto`
 
-- **No existe un subtítulo real distinto del título principal** en ninguna de las 86 fichas. La regla de truncado aplica al 100% de los casos.
 - **Selector primario:** `h1` dentro de `.participatory-space__hero-text`. Es el título visible en pantalla.
+- **Corrección (ver Fase 5.1):** el hallazgo original de esta fase ("no existe un subtítulo real") era incompleto — sí existe un elemento `<p class="participatory-space__hero-slogan">` justo debajo del `h1` en la mayoría de las fichas. No se usa para `nombre_corto` de todas formas: su contenido es texto libre inconsistente (a veces el nombre de la entidad promotora, a veces un hashtag de campaña, a veces un eslogan genérico como "Cuidamos el mañana") — no sirve como subtítulo fiable del título. Sí se usa como fuente secundaria para `entidad` (ver esa sección).
 - **Hallazgo no anticipado — 14 de 86 procesos (~16%) no tienen ese bloque `hero-text` en absoluto** (ver sección de fechas más abajo, es el mismo grupo de procesos). En esos casos el `<h1>` de la página es el logo del sitio ("Plataforma de Participación Ciudadana Digital"), no el título del proceso.
   - **Decisión:** fallback a `<meta property="og:title">` (o `<title>` si faltara también), quitando el sufijo fijo `" - Plataforma de Participación Ciudadana Digital"` (constante en `config.py`). Confirmado que ese meta tag está presente y correcto en los 14 casos.
 - **Regla de truncado para `nombre_corto`:** máx. 80 caracteres, normalizando espacios múltiples antes de truncar, cortando en el último espacio completo (nunca a mitad de palabra) y agregando `"…"` cuando hubo corte. Se validó con un caso real de 274 caracteres (`consulta72`, sobre el Precio Máximo Intermedio de GLP), que hace evidente por qué el truncado es necesario y no un caso de laboratorio.
@@ -34,9 +34,9 @@
 
 ### `entidad` (Grupo promotor)
 
-- **Selector:** mismo patrón que fechas — `div.participatory-space__metadata-item` con `.participatory-space__metadata-item-title span` == `"Grupo promotor"`; valor en el `span` hermano.
+- **Selector primario:** mismo patrón que fechas — `div.participatory-space__metadata-item` con `.participatory-space__metadata-item-title span` == `"Grupo promotor"`; valor en el `span` hermano.
 - **Hallazgo no anticipado (contrario al borrador de 0.4, que no había encontrado ningún caso):** con la muestra completa de 86 fichas, **23 de 86 (~27%) no tienen el bloque "Grupo promotor"**. Es un caso real y frecuente, no un caso borde teórico.
-  - **Decisión:** `entidad` → `null` explícito cuando el bloque no está presente.
+- **Corrección (ver Fase 5.1) — bug encontrado por inspección manual del usuario:** el primer diseño devolvía `entidad: null` en esos 23 casos, pero la entidad promotora sí se muestra en pantalla en la mayoría de ellos, como bajada del título (`<p class="participatory-space__hero-slogan">`). **Decisión final:** `entidad` = `Grupo promotor` si el bloque existe; si no, fallback a `hero-slogan`; `null` solo si ninguna de las dos fuentes está presente (no se observó ningún caso real así entre las 86 fichas). El texto del fallback es libre y a veces trae prefijos genéricos como `"Consulta pública || "` — se documenta como limitación conocida en vez de intentar recortarlo con heurísticas frágiles sobre texto no estructurado.
 
 ### `formulario_url` / `componentes`
 
@@ -62,8 +62,9 @@ En `tests/fixtures/`, HTML real sin modificar, elegidos para cubrir los casos bo
 | `ficha_homicidios.html` | Caso "feliz": título, fechas y entidad presentes, 2 componentes, slug con mayúscula. |
 | `ficha_aditivos_alimentarios.html` | Plantilla sin `hero-text`: sin título en `h1`, sin bloque de fechas → fallback a `og:title`, fechas `null`. |
 | `ficha_consejo2025.html` | Cero componentes (`formulario_url` y `componentes` → `null`). |
-| `ficha_transporte_publico_montevideo.html` | `entidad` ausente (`Grupo promotor` no presente) con fechas y componentes normales. |
+| `ficha_transporte_publico_montevideo.html` | `Grupo promotor` ausente → fallback a `hero-slogan` para `entidad` (ver Fase 5.1). |
 | `listado_per_page_100.html` | Listado completo (86 procesos) con `per_page=100`, para probar la extracción de slugs del crawler. |
+| `sintetico_sin_entidad.html` | **Sintético** (no descargado): único caso sin evidencia real (0/86) — ni `Grupo promotor` ni `hero-slogan` presentes, para ejercitar el `null` final de `entidad` por contrato. |
 
 ---
 
@@ -81,8 +82,9 @@ Se adopta el árbol extendido de `plan.md` §1.4 (config.py, utils/http_client.p
 
 - `parser.py` no hace ningún request: recibe `(html, slug, url)` como datos simples. `slug` y `url` los provee el crawler (que ya los conoce por construcción), en vez de re-derivarlos del HTML — evita depender de un `<link rel="canonical">` que se confirmó ausente en todas las fichas.
 - **Sobre "7 campos obligatorios":** el enunciado original (fuera de este repo) los cuenta como 7, pero `plan.md` §2.1 lista 8 nombres de campo. Se resuelve tratando `fecha_inicio`/`fecha_fin` como un único concepto ("fecha", con dos valores) — así quedan exactamente 7: `slug`, `nombre_largo`, `nombre_corto`, `fecha` (inicio+fin), `entidad`, `descripcion_url`, `formulario_url`. `componentes` es el campo opcional adicional. Se documenta acá para no tener que reconstruir el razonamiento en la sustentación.
-- Extracción de `entidad` y de las fechas comparten el mismo patrón HTML (`div.participatory-space__metadata-item`), así que `parser._extraer_metadata_item()` es una sola función genérica parametrizada por la etiqueta buscada ("Grupo promotor" / "Fecha de inicio / Fecha de finalización"), en vez de dos funciones casi idénticas.
-- 9 tests contra los 4 fixtures + casos de `utils/dates.py` (fecha completa, ausente, string vacío, formato inesperado) — todos verdes en el primer intento, gracias a haber confirmado los selectores contra HTML real en Fase 0 antes de escribir el parser (no se escribió a ciegas).
+- Extracción de `entidad` y de las fechas comparten el mismo patrón HTML (`div.participatory-space__metadata-item`), así que `parser._extraer_metadata_item()` es una sola función genérica parametrizada por la etiqueta buscada ("Grupo promotor" / "Fecha de inicio / Fecha de finalización"), en vez de dos funciones casi idénticas. `_extraer_entidad()` envuelve esa función agregando el fallback a `hero-slogan` (ver Fase 5.1).
+- Toda extracción de texto pasa por `utils.text.extract_text()` (separador `" "` entre nodos + normalización), no por `tag.get_text(strip=True)` directo — evita pegar palabras de nodos hijos distintos sin espacio real entre ellos (bug real encontrado en Fase 5.1).
+- 9 tests iniciales contra los 4 fixtures + casos de `utils/dates.py` (fecha completa, ausente, string vacío, formato inesperado) — todos verdes en el primer intento, gracias a haber confirmado los selectores contra HTML real en Fase 0 antes de escribir el parser (no se escribió a ciegas). Subieron a 11 tras el fix de Fase 5.1 (fallback de `entidad` + separador de texto).
 
 ## Fase 3 — Crawler
 
@@ -109,6 +111,37 @@ Corrida completa (`python main.py --state all`, sin `--limit`) contra el sitio r
 - `entidad` en `null`: **23/86**, `fecha_inicio` en `null`: **14/86**, `formulario_url` en `null`: **3/86** — coinciden exactamente con los conteos de la Fase 0, confirmando que el análisis offline sobre el HTML predijo correctamente el comportamiento del pipeline completo en producción.
 - Verificación manual: 3 URLs (`descripcion_url` y `formulario_url` de 2 procesos distintos) devolvieron HTTP 200 reales al navegarlas.
 - Revisión manual de `pencti-publica` y `consejo2025` (candidatos a `formulario_url: null`): confirmado que son casos reales sin sección "Salta a:" en la ficha, no bugs de parseo.
+
+### Fase 5.1 — Auditoría de nulos por campo y corrección de bugs
+
+Tabla resumen de `null` por campo sobre los 86 procesos reales (`output.json` completo, `--state all` sin `--limit`):
+
+| Campo | `null` (versión inicial) | `null` (corregido) | % corregido | Motivo del `null` que queda |
+|---|---:|---:|---:|---|
+| `slug` | 0 | 0 | 0% | — |
+| `nombre_largo` | 0 | 0 | 0% | — |
+| `nombre_corto` | 0 | 0 | 0% | — |
+| `fecha_inicio` / `fecha_fin` | 14 | 14 | 16% | Plantilla sin bloque de fechas (ver Fase 0) — sin cambios, es un `null` real confirmado. |
+| `entidad` | 23 | **0** | 27% | Ninguno: los 23 casos se resolvieron con el fallback a `hero-slogan` (bug corregido, ver abajo). |
+| `descripcion_url` | 0 | 0 | 0% | — |
+| `formulario_url` / `componentes` | 3 | 3 | 3% | Ficha real sin sección "Salta a:" (verificado a mano en Fase 5) — sin cambios. |
+
+**Bug encontrado:** revisando manualmente el registro de `evaluacion-trastorno-espectro-autista` ("Consulta sobre terapias alternativas para el Trastorno del Espectro Autista (TEA)") en `output.json`, se detectó `entidad: null` a pesar de que la ficha real muestra claramente "Agencia de Evaluación de Tecnologías Sanitarias de Uruguay (AETSU)" debajo del título. Inspeccionando el HTML se confirmó que esa entidad vive en `<p class="participatory-space__hero-slogan">`, un elemento que el parser original no consultaba en absoluto (solo miraba el bloque `Grupo promotor`, ausente en esta ficha).
+
+Se re-analizaron las 86 fichas cacheadas de Fase 0 cruzando `Grupo promotor` contra `hero-slogan`:
+
+| Combinación | Cantidad | Qué implica |
+|---|---:|---|
+| Ambos presentes | 49 | La mayoría **no coincide textualmente** (`hero-slogan` es más corto/informal — sigla vs. nombre completo, a veces un hashtag de campaña) → confirma que `hero-slogan` es un campo de "bajada" libre, no un duplicado de `Grupo promotor`, y por eso no reemplaza a la fuente estructurada cuando ambas existen. |
+| Solo `hero-slogan` (Grupo promotor ausente) | 23 | Los 23 casos "entidad null" originales. Se revisaron a mano y **los 23 leen como una entidad real** (ministerios, agencias, institutos) → fallback confiable. |
+| Solo `Grupo promotor` (slogan ausente) | 14 | Sin cambio de comportamiento, ya funcionaba. |
+| Ninguno de los dos | 0 | No hay evidencia real de este caso — se cubre solo con el fixture sintético `sintetico_sin_entidad.html`. |
+
+**Decisión:** `entidad` = `Grupo promotor` (prioridad) → `hero-slogan` (fallback) → `null` (contrato, sin evidencia real de que ocurra). Implementado en `parser._extraer_entidad()`.
+
+**Bug relacionado, encontrado en el mismo repaso:** `_extraer_metadata_item` y compañía usaban `tag.get_text(strip=True)` sin separador. En fichas donde el valor mezcla un `<a>` (ej. un hashtag) con texto plano sin espacio real entre ambos en el HTML fuente, esto pegaba las palabras (`"...instaladoreseléctricosURSEA"`, ficha `Consulta67`). **Fix:** `utils/text.extract_text()` centraliza `tag.get_text(" ")` + `normalize_whitespace()`, usado en todos los puntos de extracción de texto del parser. Cubierto por `test_extract_text_no_pega_nodos_sin_espacio`.
+
+`output.json` se regeneró completo (`python main.py --state all`) después del fix — mismos 86 procesos, 0 slugs duplicados, `entidad` en `null`: 0/86.
 
 ---
 
