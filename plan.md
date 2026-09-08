@@ -9,25 +9,25 @@
 **Objetivo:** entender el sitio real antes de asumir nada, y fijar las decisiones de mapeo que la consigna deja abiertas.
 
 ### 0.1 Explorar el sitio a mano
-- [ ] Abrir `/processes?filter[with_date]=all` y `&page=2` en el navegador.
-- [ ] Confirmar que hay >30 procesos entre las dos páginas (ya lo dice la consigna, pero verificarlo con los propios ojos evita sorpresas).
-- [ ] Entrar a 4-5 fichas de proceso distintas, buscando variedad de casos borde:
-  - [ ] Una con fecha de inicio y fin completas.
-  - [ ] Una con fecha `null` o incompleta.
-  - [ ] Una con `entidad` (Grupo promotor) presente.
-  - [ ] Una con `entidad` ausente.
-  - [ ] Una con varios componentes en el nav (`.participatory-space__nav-item`).
-  - [ ] Una con cero componentes (si existe).
+- [x] Abrir `/processes?filter[with_date]=all` y `&page=2` en el navegador.
+- [x] Confirmar que hay >30 procesos entre las dos páginas (ya lo dice la consigna, pero verificarlo con los propios ojos evita sorpresas).
+- [x] Entrar a 4-5 fichas de proceso distintas, buscando variedad de casos borde:
+  - [x] Una con fecha de inicio y fin completas.
+  - [x] Una con fecha `null` o incompleta.
+  - [x] Una con `entidad` (Grupo promotor) presente.
+  - [x] Una con `entidad` ausente.
+  - [x] Una con varios componentes en el nav (`.participatory-space__nav-item`).
+  - [x] Una con cero componentes (si existe).
 
 ### 0.2 Fijar reglas de mapeo (documentar ya, no al final)
-- [ ] `nombre_corto`: confirmar si el sitio muestra subtítulo real en alguna ficha. Si no, fijar la regla de truncado (largo máx., si corta en palabra completa, si agrega "…").
-- [ ] Formato exacto del string de fechas (`"01 feb 2026 / 30 sep 2026"`) y armar el diccionario de meses es-UY abreviados (ene…dic) — no depender de `locale`.
-- [ ] Definir output de `fecha_inicio`/`fecha_fin` cuando el string viene parcial o ausente (siempre `null`, nunca string vacío).
-- [ ] `formulario_url`: confirmar que se toma el primer `.participatory-space__nav-item` del DOM; documentar el supuesto de que el orden del DOM = orden de prioridad.
-- [ ] `entidad` ausente → `null` explícito.
+- [x] `nombre_corto`: confirmar si el sitio muestra subtítulo real en alguna ficha. Si no, fijar la regla de truncado (largo máx., si corta en palabra completa, si agrega "…").
+- [x] Formato exacto del string de fechas (`"01 feb 2026 / 30 sep 2026"`) y armar el diccionario de meses es-UY abreviados (ene…dic) — no depender de `locale`.
+- [x] Definir output de `fecha_inicio`/`fecha_fin` cuando el string viene parcial o ausente (siempre `null`, nunca string vacío).
+- [x] `formulario_url`: confirmar que se toma el primer `.participatory-space__nav-item` del DOM; documentar el supuesto de que el orden del DOM = orden de prioridad.
+- [x] `entidad` ausente → `null` explícito.
 
 ### 0.3 Guardar fixture
-- [ ] Guardar el HTML de al menos una ficha real como fixture local (para parser.py y el test unitario, sin depender de red).
+- [x] Guardar el HTML de al menos una ficha real como fixture local (para parser.py y el test unitario, sin depender de red).
 
 **Criterio de cierre de Fase 0:** tener las 5 reglas de mapeo escritas en un borrador (van a ir al README luego) y el fixture guardado.
 
@@ -52,7 +52,7 @@
 
 **Objetivo:** dejar el esqueleto de carpetas/archivos antes de meter lógica.
 
-- [ ] Crear estructura:
+- [x] Crear estructura:
   ```
   proyecto/
   ├── main.py
@@ -67,8 +67,8 @@
   ├── output.json          (se genera, no se escribe a mano)
   └── README.md
   ```
-- [ ] Definir `models.py`: dataclass o pydantic model con los 7 campos obligatorios + `componentes` opcional. Decidir y poder justificar la elección.
-- [ ] Elegir librería HTTP (`httpx` o `requests`) y librería de parseo HTML (`beautifulsoup4` o `lxml` / `selectolax`).
+- [x] Definir `models.py`: dataclass o pydantic model con los 7 campos obligatorios + `componentes` opcional. Decidir y poder justificar la elección.
+- [x] Elegir librería HTTP (`httpx` o `requests`) y librería de parseo HTML (`beautifulsoup4` o `lxml` / `selectolax`).
 
 **Criterio de cierre:** carpetas creadas, dependencias decididas, `models.py` con los tipos definidos (aunque el resto esté vacío).
 
@@ -98,14 +98,14 @@ proyecto/
 ```
 
 **Checklist de refinamiento (no obligatorio por la letra de la consigna, pero recomendado):**
-- [ ] `config.py`: mover ahí todos los valores "mágicos" — `per_page=100`, cantidad de reintentos, factor de backoff, delay entre requests, el límite de 80 chars de `nombre_corto`, el selector `.participatory-space__nav-item`, el texto "Grupo promotor". Responde directamente al criterio de evaluación "ausencia de valores mágicos sin explicación".
-- [ ] `utils/http_client.py`: extraer ahí la sesión HTTP con reintentos/backoff/delay, separada de la orquestación. `crawler.py` debería *llamar* a este cliente, no implementar reintentos inline.
-- [ ] `parser.py` sin I/O: la función de parseo recibe un string de HTML y devuelve un dict/modelo — nunca hace un request por su cuenta. Esto es justamente lo que permite testear contra el fixture local sin red (Fase 2); conviene dejarlo como regla explícita de diseño, no solo como consecuencia accidental.
-- [ ] `utils/text.py`: extraer la lógica de truncado de `nombre_corto` (corte en palabra completa, normalización de espacios múltiples, agregado de "…") como función pura y testeable, en vez de dejarla inline dentro de `parser.py`.
-- [ ] Patrón "un registro a la vez": en `crawler.py`, aislar una función tipo `build_proceso(slug: str) -> Proceso | None` que hace fetch + parse + manejo de excepción para un solo proceso. El loop principal solo itera sobre slugs y llama a esa función — así el `try/except` amplio vive en un único lugar bien delimitado, no disperso por el archivo.
-- [ ] `output.py` (o una función equivalente en `main.py`): aislar la escritura del JSON final en una función propia, para que sea trivial cambiar el destino en el futuro (ej. a una base de datos, según la pregunta de diseño de la Fase 7) sin tocar el resto del pipeline.
-- [ ] Logging centralizado: configurar el logger una sola vez (ej. al arrancar `main.py`, o en `utils/logging_config.py`), y que cada módulo solo haga `logging.getLogger(__name__)` — evitar múltiples `logging.basicConfig()` dispersos.
-- [ ] `models.py`: agregar un método de serialización propio (ej. `to_dict()`, o `dataclasses.asdict()` con manejo explícito de `None`) para que la conversión a JSON no dependa de lógica ad hoc en `main.py`.
+- [x] `config.py`: mover ahí todos los valores "mágicos" — `per_page=100`, cantidad de reintentos, factor de backoff, delay entre requests, el límite de 80 chars de `nombre_corto`, el selector `.participatory-space__nav-item`, el texto "Grupo promotor". Responde directamente al criterio de evaluación "ausencia de valores mágicos sin explicación".
+- [x] `utils/http_client.py`: extraer ahí la sesión HTTP con reintentos/backoff/delay, separada de la orquestación. `crawler.py` debería *llamar* a este cliente, no implementar reintentos inline.
+- [x] `parser.py` sin I/O: la función de parseo recibe un string de HTML y devuelve un dict/modelo — nunca hace un request por su cuenta. Esto es justamente lo que permite testear contra el fixture local sin red (Fase 2); conviene dejarlo como regla explícita de diseño, no solo como consecuencia accidental.
+- [x] `utils/text.py`: extraer la lógica de truncado de `nombre_corto` (corte en palabra completa, normalización de espacios múltiples, agregado de "…") como función pura y testeable, en vez de dejarla inline dentro de `parser.py`.
+- [x] Patrón "un registro a la vez": en `crawler.py`, aislar una función tipo `build_proceso(slug: str) -> Proceso | None` que hace fetch + parse + manejo de excepción para un solo proceso. El loop principal solo itera sobre slugs y llama a esa función — así el `try/except` amplio vive en un único lugar bien delimitado, no disperso por el archivo.
+- [x] `output.py` (o una función equivalente en `main.py`): aislar la escritura del JSON final en una función propia, para que sea trivial cambiar el destino en el futuro (ej. a una base de datos, según la pregunta de diseño de la Fase 7) sin tocar el resto del pipeline.
+- [x] Logging centralizado: configurar el logger una sola vez (ej. al arrancar `main.py`, o en `utils/logging_config.py`), y que cada módulo solo haga `logging.getLogger(__name__)` — evitar múltiples `logging.basicConfig()` dispersos.
+- [x] `models.py`: agregar un método de serialización propio (ej. `to_dict()`, o `dataclasses.asdict()` con manejo explícito de `None`) para que la conversión a JSON no dependa de lógica ad hoc en `main.py`.
 
 **Por qué importa esto para la sustentación:** la consigna evalúa explícitamente "organización, nombres claros, ausencia de valores mágicos sin explicación". Esta separación adicional no es obligatoria por la letra de la consigna, pero permite explicar cada pieza de forma aislada ("esto es el cliente HTTP", "esto es el parser", "esto es la orquestación") en vez de tener que justificar un `crawler.py` que mezcla red, reintentos y lógica de negocio.
 
@@ -120,23 +120,23 @@ proyecto/
 > Nota de arquitectura (ver 1.4): al implementar esta fase, `parser.py` no debe hacer ningún request — solo recibe HTML como string. La lógica de truncado de `nombre_corto` conviene extraerla a `utils/text.py` en vez de dejarla inline acá.
 
 ### 2.1 Extracción de campos
-- [ ] `slug` desde la URL.
-- [ ] `nombre_largo` desde `<h1>` / `og:title`.
-- [ ] `nombre_corto` aplicando la regla fijada en 0.2.
-- [ ] `fecha_inicio` / `fecha_fin`: parseo del string combinado usando `utils/dates.py`.
-- [ ] `entidad` desde el bloque "Grupo promotor".
-- [ ] `descripcion_url` = URL de la ficha.
-- [ ] `formulario_url` = primer `.participatory-space__nav-item`.
-- [ ] (Opcional) `componentes` = lista completa de esos enlaces.
+- [x] `slug` desde la URL.
+- [x] `nombre_largo` desde `<h1>` / `og:title`.
+- [x] `nombre_corto` aplicando la regla fijada en 0.2.
+- [x] `fecha_inicio` / `fecha_fin`: parseo del string combinado usando `utils/dates.py`.
+- [x] `entidad` desde el bloque "Grupo promotor".
+- [x] `descripcion_url` = URL de la ficha.
+- [x] `formulario_url` = primer `.participatory-space__nav-item`.
+- [x] (Opcional) `componentes` = lista completa de esos enlaces.
 
 ### 2.2 utils/dates.py
-- [ ] Diccionario manual de meses es-UY abreviados.
-- [ ] Función que reciba el string crudo y devuelva `(fecha_inicio, fecha_fin)` en formato `YYYY-MM-DD` o `None`.
-- [ ] Manejar casos: string ausente, solo una fecha, formato inesperado (no debe romper, debe loguear y devolver `None`).
+- [x] Diccionario manual de meses es-UY abreviados.
+- [x] Función que reciba el string crudo y devuelva `(fecha_inicio, fecha_fin)` en formato `YYYY-MM-DD` o `None`.
+- [x] Manejar casos: string ausente, solo una fecha, formato inesperado (no debe romper, debe loguear y devolver `None`).
 
 ### 2.3 Test unitario
-- [ ] 1-2 tests sobre el fixture HTML guardado en 0.3, verificando los 7 campos obligatorios.
-- [ ] Al menos un test de `utils/dates.py` con casos borde (fecha completa, fecha ausente, formato raro).
+- [x] 1-2 tests sobre el fixture HTML guardado en 0.3, verificando los 7 campos obligatorios.
+- [x] Al menos un test de `utils/dates.py` con casos borde (fecha completa, fecha ausente, formato raro).
 
 **Criterio de cierre:** `pytest` corre en verde contra el fixture local, sin necesidad de red.
 
@@ -148,14 +148,14 @@ proyecto/
 
 > Nota de arquitectura (ver 1.4): conviene que los reintentos/backoff/delay vivan en `utils/http_client.py`, no inline en `crawler.py`. El manejo de errores por proceso individual encaja bien en una función `build_proceso(slug)` separada del loop principal, y todos los valores de configuración (per_page, cantidad de reintentos, delay) deberían salir de `config.py`, no quedar como números sueltos.
 
-- [ ] Función para pedir `/processes?filter[with_date]={state}&page=N` y extraer los slugs listados.
-- [ ] Paginación: seguir incrementando `page` hasta juntar el `--limit` pedido o hasta que la página no devuelva más resultados.
-- [ ] Deduplicación por `slug` (definir en qué punto exacto: ¿al armar la lista de slugs, o sobre el resultado final? — elegir uno y ser consistente).
-- [ ] Fetch de cada ficha individual (`/processes/{slug}`).
-- [ ] Reintentos con backoff ante timeout/5xx (definir cantidad de intentos y estrategia: exponencial recomendado).
-- [ ] Delay entre requests (valor razonable, ej. 0.3-0.5s, justificable como buena práctica, no por anti-bot).
-- [ ] Manejo de errores por comportamiento: `try/except Exception` amplio *dentro del loop por proceso*, logueando slug + URL + excepción, sin tumbar la corrida completa.
-- [ ] Logging configurado (INFO para progreso, WARNING/ERROR para fallos individuales).
+- [x] Función para pedir `/processes?filter[with_date]={state}&page=N` y extraer los slugs listados.
+- [x] Paginación: seguir incrementando `page` hasta juntar el `--limit` pedido o hasta que la página no devuelva más resultados.
+- [x] Deduplicación por `slug` (definir en qué punto exacto: ¿al armar la lista de slugs, o sobre el resultado final? — elegir uno y ser consistente).
+- [x] Fetch de cada ficha individual (`/processes/{slug}`).
+- [x] Reintentos con backoff ante timeout/5xx (definir cantidad de intentos y estrategia: exponencial recomendado).
+- [x] Delay entre requests (valor razonable, ej. 0.3-0.5s, justificable como buena práctica, no por anti-bot).
+- [x] Manejo de errores por comportamiento: `try/except Exception` amplio *dentro del loop por proceso*, logueando slug + URL + excepción, sin tumbar la corrida completa.
+- [x] Logging configurado (INFO para progreso, WARNING/ERROR para fallos individuales).
 
 **Criterio de cierre:** correr el crawler contra el sitio real trae ≥30 slugs únicos y sus HTMLs sin que un fallo puntual rompa la corrida.
 
@@ -167,12 +167,12 @@ proyecto/
 
 > Nota de arquitectura (ver 1.4): `main.py` debería quedar delgado — parsea argumentos y orquesta llamadas a `crawler`, `parser` y `output.py`, sin lógica de negocio propia. La escritura del JSON final conviene aislarla en `output.py` (o una función dedicada) en vez de mezclarla con el parseo de argumentos.
 
-- [ ] `--limit N` (tope de procesos procesados).
-- [ ] `--state {all,active,past,upcoming}` mapeado a `filter[with_date]`.
-- [ ] Modo que solo imprima/guarde el JSON localmente (esta es la única forma de ejecución que van a correr).
-- [ ] Comando de referencia a documentar: `python main.py --state all --limit 30`.
-- [ ] Type hints en las funciones públicas de `main.py`, `crawler.py`, `parser.py`.
-- [ ] Uso de `pathlib.Path` para cualquier ruta de archivo (fixture, output.json, etc.).
+- [x] `--limit N` (tope de procesos procesados).
+- [x] `--state {all,active,past,upcoming}` mapeado a `filter[with_date]`.
+- [x] Modo que solo imprima/guarde el JSON localmente (esta es la única forma de ejecución que van a correr).
+- [x] Comando de referencia a documentar: `python main.py --state all --limit 30`.
+- [x] Type hints en las funciones públicas de `main.py`, `crawler.py`, `parser.py`.
+- [x] Uso de `pathlib.Path` para cualquier ruta de archivo (fixture, output.json, etc.).
 
 **Criterio de cierre:** correr el comando documentado desde cero genera `output.json` con ≥30 procesos reales, sin tocar nada a mano.
 
@@ -182,12 +182,12 @@ proyecto/
 
 **Objetivo:** revisar el `output.json` generado con ojo de evaluador, no de desarrollador.
 
-- [ ] ≥30 procesos en total.
-- [ ] Sin slugs duplicados.
-- [ ] Los 7 campos obligatorios presentes en cada registro (con `null` donde corresponde, nunca `""` ni ausentes del dict).
-- [ ] Fechas en formato `YYYY-MM-DD` o `null`, nunca el string crudo original.
-- [ ] `descripcion_url` y `formulario_url` son URLs reales y navegables (probar 2-3 al azar abriéndolas).
-- [ ] Revisar manualmente 2-3 registros con `entidad: null` o `fecha_inicio: null` para confirmar que son casos reales y no bugs de parseo.
+- [x] ≥30 procesos en total.
+- [x] Sin slugs duplicados.
+- [x] Los 7 campos obligatorios presentes en cada registro (con `null` donde corresponde, nunca `""` ni ausentes del dict).
+- [x] Fechas en formato `YYYY-MM-DD` o `null`, nunca el string crudo original.
+- [x] `descripcion_url` y `formulario_url` son URLs reales y navegables (probar 2-3 al azar abriéndolas).
+- [x] Revisar manualmente 2-3 registros con `entidad: null` o `fecha_inicio: null` para confirmar que son casos reales y no bugs de parseo.
 
 **Criterio de cierre:** `output.json` pasa todos los checks de arriba.
 
@@ -197,14 +197,14 @@ proyecto/
 
 **Objetivo:** documentar de forma que se note el criterio de mapeo, que es lo que más pesa en la evaluación.
 
-- [ ] Instrucciones de cómo correr el CLI (3-4 líneas de prosa + comandos de ejemplo).
-- [ ] Sección **"Decisiones y supuestos"** (3-5 bullets, la parte que más importa):
-  - [ ] Qué se hizo con `nombre_corto` y por qué.
-  - [ ] Cómo se parsean las fechas y qué pasa en los casos ausentes/parciales.
-  - [ ] Cómo se maneja `entidad` ausente.
-  - [ ] Criterio para `formulario_url` cuando hay múltiples componentes.
-  - [ ] (Opcional) Cualquier vía alternativa evaluada y descartada (open data, API GraphQL) con la razón concreta.
-- [ ] Sección breve de arquitectura (qué hace cada módulo).
+- [x] Instrucciones de cómo correr el CLI (3-4 líneas de prosa + comandos de ejemplo).
+- [x] Sección **"Decisiones y supuestos"** (3-5 bullets, la parte que más importa):
+  - [x] Qué se hizo con `nombre_corto` y por qué.
+  - [x] Cómo se parsean las fechas y qué pasa en los casos ausentes/parciales.
+  - [x] Cómo se maneja `entidad` ausente.
+  - [x] Criterio para `formulario_url` cuando hay múltiples componentes.
+  - [x] (Opcional) Cualquier vía alternativa evaluada y descartada (open data, API GraphQL) con la razón concreta.
+- [x] Sección breve de arquitectura (qué hace cada módulo).
 
 **Criterio de cierre:** alguien que no vio el código puede correr el CLI y entender las decisiones de mapeo solo leyendo el README.
 
@@ -214,10 +214,10 @@ proyecto/
 
 **Objetivo:** respuesta escrita de 5-8 líneas, preparada con tiempo, no al final corriendo con el reloj.
 
-- [ ] Mencionar `slug` como clave natural de upsert (INSERT ... ON CONFLICT / MERGE).
-- [ ] Mencionar detección de cambios (hash de contenido o `updated_at`) para no reprocesar si no cambió nada.
-- [ ] Mencionar que el sitio no expone `sort=updated_at`, así que sin eso hay que traer el listado completo igual y comparar en destino.
-- [ ] Mencionar idempotencia ante fallos a mitad de corrida (reintentar sin duplicar).
+- [x] Mencionar `slug` como clave natural de upsert (INSERT ... ON CONFLICT / MERGE).
+- [x] Mencionar detección de cambios (hash de contenido o `updated_at`) para no reprocesar si no cambió nada.
+- [x] Mencionar que el sitio no expone `sort=updated_at`, así que sin eso hay que traer el listado completo igual y comparar en destino.
+- [x] Mencionar idempotencia ante fallos a mitad de corrida (reintentar sin duplicar).
 
 **Criterio de cierre:** párrafo de 5-8 líneas listo, sin necesidad de improvisar en la sustentación.
 

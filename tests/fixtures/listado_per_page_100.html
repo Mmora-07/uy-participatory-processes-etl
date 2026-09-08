@@ -1,0 +1,4080 @@
+
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="no-js">
+  <head>
+    <title>Procesos participativos - Plataforma de Participación Ciudadana Digital</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="gdEAqqR44Evqll6OufQCzPomTbSST-_8FlFc6-CIyCzIVrPFw3dfrMP2qrAum1V-bEWEzRjQRFJ2lao6cjXVYA" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="alternate" href="/processes?filter%5Bwith_date%5D=all&amp;locale=es&amp;per_page=100" hreflang="es">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@agesic">
+<meta name="twitter:title" content="Procesos participativos - Plataforma de Participación Ciudadana Digital">
+<meta name="twitter:description" content="Esta es la Plataforma de Participación Ciudadana DigitalConstruir una sociedad más abierta, transparente y colaborativa es posible">
+<meta name="twitter:image" content="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaEFUIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--53afeeaad0b464b3de7d223219482a10db049093/portada%20NNA.jpg">
+
+<meta property="og:url" content="https://plataformaparticipacionciudadana.gub.uy/processes?filter[with_date]=all&amp;per_page=100">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Procesos participativos - Plataforma de Participación Ciudadana Digital">
+<meta property="og:description" content="Esta es la Plataforma de Participación Ciudadana DigitalConstruir una sociedad más abierta, transparente y colaborativa es posible">
+<meta property="og:image" content="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaEFUIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--53afeeaad0b464b3de7d223219482a10db049093/portada%20NNA.jpg">
+
+  <meta name="theme-color" content="#25418e">
+
+<link rel="icon" href="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbWQ1TlRodk9ISTBaM2hxYURkeWIzZGxibkZwYlhRNE1IVmllZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaTVwWTI4aU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoybHRZV2RsYmk1cFkyOEdPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJaDFwYldGblpTOTJibVF1YldsamNtOXpiMlowTG1samIyNEdPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMjc3WiIsInB1ciI6ImJsb2Jfa2V5In19--c9ef3cf9a049ba3cbba8655e6102aa003feb2fe7/imagen.ico" sizes="any" />
+<link rel="icon" type="image/x-icon" href="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiWGx3T0dSaWRteDJObk5sYVhCdGIzSjZkVEZuTTNadE5tWTBid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoybHRZV2RsYmk1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjI4M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--edc3769e6ae6ee24fb80c98035802137a0d6989e/imagen.png" sizes="512x512" /><link rel="icon" type="image/x-icon" href="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhabkl6YkhocWNYaDJOV0ZzWkRnelptdHVObUZzWkd3MWMzRm1PUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoybHRZV2RsYmk1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjI4OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2017720f3028aaf8412e85d1e3f2751574273567/imagen.png" sizes="192x192" /><link rel="icon" type="image/x-icon" href="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNMnB1T0haMVpqSm9NbW96TjNVNVltVTVZMk5tZURVNGIyeHpiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoybHRZV2RsYmk1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjI5NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2fbb982f39dcedef3a22776d8be87cd5b0e62b13/imagen.png" sizes="180x180" /><link rel="icon" type="image/x-icon" href="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMnBrYjIwME5UWXljV2RrZW5sek5ETjRkM1ZxZVRGNWF6SnBid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoybHRZV2RsYmk1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjMwNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--42935440a0c1f3b850efa5da77db4959f21bd4c1/imagen.png" sizes="32x32" />
+<link rel="apple-touch-icon" type="image/png" href="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNMnB1T0haMVpqSm9NbW96TjNVNVltVTVZMk5tZURVNGIyeHpiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaTV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoybHRZV2RsYmk1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjMwOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--613b2bb0c9abfbcef533c3fe033170644cccec92/imagen.png" />
+<link rel="manifest" href="/manifest.webmanifest">
+
+
+<link rel="stylesheet" href="/decidim-packs/css/decidim_core-95fa0f2c.css" media="all" />
+
+
+
+<link rel="stylesheet" href="/decidim-packs/css/decidim_overrides-5657aace.css" media="all" />
+<link rel="stylesheet" href="/decidim-packs/css/gubuy_general-c8cd41a8.css" media="all" />
+<style media="all">
+:root{
+  --primary: #25418e;--primary-rgb: 37 65 142;--tertiary: #daaa00;--tertiary-rgb: 218 170 0;--secondary: #25418e;--secondary-rgb: 37 65 142;
+}
+</style>
+
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV9T4MKX6K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-TV9T4MKX6K");
+  </script>
+
+
+
+
+
+  </head>
+
+  <body class="text-black text-md form-defaults">
+    <!--noindex--><!--googleoff: all-->
+    <a class="layout-container__skip" href="#content">Saltar al contenido principal</a>
+    <div id="dc-dialog-wrapper" class="cookies__container" data-nosnippet role="region" hidden>
+  <div class="cookies">
+    <div class="cookies__left">
+      <div>
+        <div class="h5">
+          Información sobre las cookies utilizadas en la página web
+        </div>
+        <p>
+          Utilizamos cookies en nuestro sitio web para mejorar el rendimiento y el contenido del mismo. Las cookies nos permiten ofrecer una experiencia de usuario y unos contenidos más personalizados desde nuestros canales de redes sociales.
+        </p>
+      </div>
+    </div>
+    <div class="cookies__right">
+      <button id="dc-dialog-accept" class="button button__sm button__secondary">
+        Aceptar todas
+      </button>
+      <button id="dc-dialog-reject" class="button button__sm button__transparent-secondary">
+        Aceptar solo las esenciales
+      </button>
+      <button id="dc-dialog-settings" class="button button__sm button__transparent-secondary" data-dialog-open="dc-modal">
+        Configuración
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div id="dc-modal" data-dialog="dc-modal"><div id="dc-modal-content"><button type="button" data-dialog-close="dc-modal" data-dialog-closable="" aria-label="Cerrar el modal">&times</button>
+  <div data-dialog-container>
+    <h2 id="dialog-title-dc-modal" tabindex="-1" data-dialog-title>Configuración de cookies</h2>
+    <div>
+      <p id="dialog-desc-dc-modal">
+        Utilizamos cookies para asegurar las funcionalidades básicas del sitio web y para mejorar tu experiencia en línea. Puedes configurar y aceptar el uso de las cookies, y modificar tus opciones de consentimiento en cualquier momento.
+      </p>
+      <div class="mt-8" data-component="accordion" data-multiselectable="false">
+        
+          <div class="cookies__category" data-id="essential">
+  <div class="cookies__category-trigger">
+    <label for="dc-essential" class="cookies__category-toggle">
+      <input
+        checked="checked"
+        id="dc-essential"
+        type="checkbox"
+        name="essential"
+        disabled>
+      <span class="sr-only">Cambiar Esenciales</span>
+      <span class="cookies__category-toggle-content"></span>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-toggle-icon"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-check-line"></use></svg>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-toggle-icon"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-close-line"></use></svg>
+    </label>
+
+    <div id="accordion-trigger-essential" data-controls="accordion-panel-essential" aria-labelledby="accordion-title-essential">
+      <h3 id="accordion-title-essential" class="cookies__category-trigger-title">
+        Esenciales
+      </h3>
+
+      <span>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-trigger-arrow"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-down-s-line"></use></svg>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-trigger-arrow"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-up-s-line"></use></svg>
+      </span>
+    </div>
+
+  </div>
+
+  <div id="accordion-panel-essential" class="cookies__category-panel" aria-hidden="true">
+    <p>Estas cookies permiten la funcionalidad clave del sitio web y ayudan a mantener a sus usuarias seguras. Se guardan automáticamente en el navegador y no se pueden desactivar.</p>
+
+    
+    <div>
+      <div class="cookies__category-panel__tr">
+        <div class="cookies__category-panel__th">
+          Tipo
+        </div>
+        <div class="cookies__category-panel__th">
+          Nombre
+        </div>
+        <div class="cookies__category-panel__th">
+          Servicio
+        </div>
+        <div class="cookies__category-panel__th">
+          Descripción
+        </div>
+      </div>
+
+      
+        <div class="cookies__category-panel__tr">
+          <div class="cookies__category-panel__td">
+            Cookie
+          </div>
+          <div class="cookies__category-panel__td">
+            _session_id
+          </div>
+          <div class="cookies__category-panel__td">
+            Esta página web
+          </div>
+          <div class="cookies__category-panel__td">
+            Permite a los sitios web recordar a la usuaria dentro de un sitio web cuando se mueve entre páginas web.
+          </div>
+        </div>
+      
+        <div class="cookies__category-panel__tr">
+          <div class="cookies__category-panel__td">
+            Cookie
+          </div>
+          <div class="cookies__category-panel__td">
+            decidim-consent
+          </div>
+          <div class="cookies__category-panel__td">
+            Esta página web
+          </div>
+          <div class="cookies__category-panel__td">
+            Almacena información sobre las cookies permitidas por la usuaria en esta página web.
+          </div>
+        </div>
+      
+        <div class="cookies__category-panel__tr">
+          <div class="cookies__category-panel__td">
+            Almacenamiento local
+          </div>
+          <div class="cookies__category-panel__td">
+            pwaInstallPromptSeen
+          </div>
+          <div class="cookies__category-panel__td">
+            Esta página web
+          </div>
+          <div class="cookies__category-panel__td">
+            Guarda el estado si la notificación de instalación de la aplicación web progresiva (PWA) ya ha sido vista por la usuaria.
+          </div>
+        </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+        
+          <div class="cookies__category" data-id="preferences">
+  <div class="cookies__category-trigger">
+    <label for="dc-preferences" class="cookies__category-toggle">
+      <input
+        
+        id="dc-preferences"
+        type="checkbox"
+        name="preferences"
+        >
+      <span class="sr-only">Cambiar Preferencias</span>
+      <span class="cookies__category-toggle-content"></span>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-toggle-icon"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-check-line"></use></svg>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-toggle-icon"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-close-line"></use></svg>
+    </label>
+
+    <div id="accordion-trigger-preferences" data-controls="accordion-panel-preferences" aria-labelledby="accordion-title-preferences">
+      <h3 id="accordion-title-preferences" class="cookies__category-trigger-title">
+        Preferencias
+      </h3>
+
+      <span>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-trigger-arrow"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-down-s-line"></use></svg>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-trigger-arrow"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-up-s-line"></use></svg>
+      </span>
+    </div>
+
+  </div>
+
+  <div id="accordion-panel-preferences" class="cookies__category-panel" aria-hidden="true">
+    <p>Estas cookies permiten que el sitio web recuerde las opciones que se han elegido en el pasado en este sitio web para proporcionar una experiencia más personalizada a las usuarias.</p>
+
+    
+  </div>
+</div>
+
+        
+          <div class="cookies__category" data-id="analytics">
+  <div class="cookies__category-trigger">
+    <label for="dc-analytics" class="cookies__category-toggle">
+      <input
+        
+        id="dc-analytics"
+        type="checkbox"
+        name="analytics"
+        >
+      <span class="sr-only">Cambiar Analíticas y estadísticas</span>
+      <span class="cookies__category-toggle-content"></span>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-toggle-icon"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-check-line"></use></svg>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-toggle-icon"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-close-line"></use></svg>
+    </label>
+
+    <div id="accordion-trigger-analytics" data-controls="accordion-panel-analytics" aria-labelledby="accordion-title-analytics">
+      <h3 id="accordion-title-analytics" class="cookies__category-trigger-title">
+        Analíticas y estadísticas
+      </h3>
+
+      <span>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-trigger-arrow"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-down-s-line"></use></svg>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-trigger-arrow"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-up-s-line"></use></svg>
+      </span>
+    </div>
+
+  </div>
+
+  <div id="accordion-panel-analytics" class="cookies__category-panel" aria-hidden="true">
+    <p>Estas cookies se utilizan para medir y analizar la audiencia del sitio web para ayudar a mejorarlo.</p>
+
+    
+  </div>
+</div>
+
+        
+          <div class="cookies__category" data-id="marketing">
+  <div class="cookies__category-trigger">
+    <label for="dc-marketing" class="cookies__category-toggle">
+      <input
+        
+        id="dc-marketing"
+        type="checkbox"
+        name="marketing"
+        >
+      <span class="sr-only">Cambiar Marketing</span>
+      <span class="cookies__category-toggle-content"></span>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-toggle-icon"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-check-line"></use></svg>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-toggle-icon"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-close-line"></use></svg>
+    </label>
+
+    <div id="accordion-trigger-marketing" data-controls="accordion-panel-marketing" aria-labelledby="accordion-title-marketing">
+      <h3 id="accordion-title-marketing" class="cookies__category-trigger-title">
+        Marketing
+      </h3>
+
+      <span>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-trigger-arrow"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-down-s-line"></use></svg>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" class="cookies__category-trigger-arrow"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-up-s-line"></use></svg>
+      </span>
+    </div>
+
+  </div>
+
+  <div id="accordion-panel-marketing" class="cookies__category-panel" aria-hidden="true">
+    <p>Estas cookies recopilan información sobre cómo utilizas el sitio web y se pueden utilizar para proporcionarte un servicio más personalizado en los diferentes espacios en los que participas.</p>
+
+    
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  <div data-dialog-actions>
+    <button id="dc-modal-accept" class="button button__sm md:button__lg button__transparent-secondary" data-dialog-close="dc-modal">
+      Aceptar todas
+    </button>
+    <button id="dc-modal-reject" class="button button__sm md:button__lg button__transparent-secondary" data-dialog-close="dc-modal">
+      Aceptar solo las esenciales
+    </button>
+    <button id="dc-modal-save" class="button button__sm md:button__lg button__secondary" data-dialog-close="dc-modal">
+      <span>Guardar configuración</span>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-save-line"></use></svg>
+    </button>
+  </div>
+</div></div>
+
+
+    <!--googleon: all--><!--/noindex-->
+
+    
+<div class="layout-container">
+  <header class="Header Header--slim Header--blue ">
+    <div id="sticky-header-container" data-sticky-header>
+      
+      
+      <div class="js-offline-message hidden">
+  <div class="flash flex-col alert" data-announcement="">
+  
+
+  <div class="flash__message">
+    ¡Ups! Tu red está desconectada. Esta es una versión previa en caché de la página que estás visitando, quizás el contenido no está actualizado.
+  </div>
+</div>
+
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // show the banner if it is offline AND the offline-fallback is not displaying
+    if (!navigator.onLine && !document.querySelector("#offline-fallback-html")) {
+      document.querySelector(".js-offline-message").style.display = "block"
+    }
+  })
+</script>
+
+      
+    </div>
+    <div id="main-bar">
+      <div id="menu-bar">
+        <div class="Header-top">
+  <div class="Container">
+    <div class="Header-site">
+      <a href="https://www.gub.uy/" class="Parent" rel="decidim noopener noreferrer">
+        <span class="Brand Brand--sm">
+          <span class="Brand-text">gub.uy</span>
+        </span>
+      </a>
+    </div>
+    <div class="Header-login">
+      <div class="main-bar__user">
+            <a aria-label="Ingresar a la Plataforma" href="/users/sign_in">
+              <span class="Icon Icon--user--blue">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 26 25" style="enable-background:new 0 0 47 47;" xml:space="preserve"><style type="text/css">.st0{fill:#003DA5;}</style><path class="st0" d="M24.5,7.7c-0.9-2.3-2.5-4.2-4.6-5.6S15.5,0,13,0C9.7,0,6.5,1.3,4.2,3.7s-3.7,5.5-3.7,8.8c0,2.5,0.7,4.9,2.1,6.9  C4,21.5,5.9,23.1,8.2,24c2.3,0.9,4.8,1.2,7.2,0.7c2.4-0.5,4.7-1.7,6.4-3.4c1.7-1.7,2.9-4,3.4-6.4C25.7,12.5,25.5,10,24.5,7.7z   M13,23.2c-2.3,0-4.6-0.8-6.4-2.2c0.3-1.5,1.1-2.9,2.2-3.9c1.2-1,2.7-1.5,4.2-1.5s3,0.5,4.2,1.5c1.2,1,2,2.4,2.2,3.9  C17.6,22.4,15.3,23.2,13,23.2z M9.9,10.7c0-0.6,0.2-1.2,0.5-1.7c0.3-0.5,0.8-0.9,1.4-1.1c0.6-0.2,1.2-0.3,1.8-0.2s1.2,0.4,1.6,0.8  c0.4,0.4,0.7,1,0.8,1.6c0.1,0.6,0.1,1.2-0.2,1.8c-0.2,0.6-0.6,1-1.1,1.4c-0.5,0.3-1.1,0.5-1.7,0.5c-0.8,0-1.6-0.3-2.2-0.9  C10.2,12.3,9.9,11.5,9.9,10.7z M21,19.6c-0.4-1.2-1-2.2-1.8-3.1c-0.8-0.9-1.8-1.6-3-2.1c0.8-0.7,1.3-1.5,1.6-2.5  c0.3-1,0.2-2-0.1-2.9c-0.3-0.9-1-1.8-1.8-2.3C15,6,14,5.7,13,5.7c-1,0-2,0.3-2.8,0.9C9.4,7.2,8.7,8,8.4,8.9C8,9.9,8,10.9,8.2,11.9  c0.3,1,0.8,1.8,1.6,2.5c-1.1,0.5-2.1,1.2-3,2.1c-0.8,0.9-1.4,2-1.8,3.1c-1.1-1.3-2-2.8-2.4-4.5c-0.4-1.7-0.4-3.4,0-5.1  S3.9,6.7,5,5.4c1.1-1.3,2.6-2.3,4.2-2.9s3.4-0.8,5.1-0.6c1.7,0.2,3.4,0.8,4.8,1.8c1.4,1,2.6,2.3,3.4,3.8c0.8,1.5,1.2,3.2,1.2,5  C23.7,15.1,22.7,17.6,21,19.6z"></path></svg>
+              </span>
+              <span class="u-textBlue">Ingresar a la Plataforma</span>
+</a>      </div>
+    </div>
+  </div>
+</div>
+
+<div class="Header-body">
+  <div class="Container">
+    <div class="Header-logo">
+      <div class="main-bar__logo-desktop">
+          <a aria-label="Ir a la página principal" href="https://plataformaparticipacionciudadana.gub.uy/">
+      <img alt="" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbVZxYUd0b2NEZDFaalJyZDJRMFpuSTFabWRxTjNGalpuSndkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaUFsTWpneEpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFXMWhaMlZ1SlRJd0pUSTRNU1V5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjMyN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--05d16222559b5fc6decfd4ec5c29a8dc4a82d9f9/imagen%20(1).png" />
+    <h1 class="Logo-title">Plataforma de Participación Ciudadana Digital</h1>
+</a>
+      </div>
+    </div>
+    <div class="Header-right">
+      <div class="NavSearch-wrapper">
+        <nav class="Nav--flex js-navDropdown show" id="menu">
+          <ul>
+    <li>
+    <a href="/processes" id="item-1" class="NavToggle-item w-sub" aria-expanded="false">Participá</a>
+    <div class="subnav">
+        <ul>
+
+
+
+
+
+
+
+
+
+
+
+            <li>
+              <a class="w-sub" aria-label="Procesos" aria-current="page" href="/processes">Procesos</a>
+            </li>
+
+
+
+
+            <li>
+              <a class="w-sub" aria-label="Ámbitos Participativos" href="/assemblies">Ámbitos Participativos</a>
+            </li>
+          <li>
+              <a class="w-sub" aria-label="Encuentros" href="/meetings/">
+                  Encuentros
+</a>          </li>
+          <li>
+              <a class="w-sub" aria-label="Actividad" href="/last_activities">
+                  Actividad
+</a>          </li>
+        </ul>
+    </div>
+    </li>
+    <li>
+    <a href="/pages/ingreso-plataforma" id="item-2" class="NavToggle-item w-sub" aria-expanded="false">¿Cómo participar?</a>
+    <div class="subnav">
+        <ul>
+        <li><a href="/pages/ingreso-plataforma" class="w-sub">Formas de participación</a></li>
+        <li><a href="/pages/organismos-integrar" class="w-sub">Guía para los organismos</a></li>
+        </ul>
+    </div>
+    </li>
+    <li>
+      <a id="item-3" class="NavToggle-item w-sub" aria-expanded="false" href="/pages">
+        Ayuda
+</a>    </li>
+</ul>
+        </nav>
+        <div class="searchButtonWrap-md" id="searchButtonWrap-md">
+          <button class="Button Button--inverse Button--w-icon" aria-label="Abrir buscador y buscar">
+            <!-- SVG lupa inline -->
+            <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 14 14"><path d="M5.9,10.9C3.2,10.9,1,8.7,1,5.9S3.2,1,5.9,1s4.9,2.2,4.9,4.9S8.7,10.9,5.9,10.9z M5.9,1.9c-2.2,0-4.1,1.8-4.1,4.1 S3.7,10,5.9,10C8.2,10,10,8.2,10,5.9S8.2,1.9,5.9,1.9z"></path><path d="M9.4,8.8l3.6,3.6L12.4,13L8.8,9.4L9.4,8.8z"></path></svg>
+            <span class="u-hideVisually">Abrir buscador y </span>Buscar
+          </button>
+        </div>
+        
+        <div class="Header-search">
+          <div class="navButtonWrap-md">
+            <button class="Button Button--primary Button--w-icon" id="navButtonWrap-md" aria-label="Abrir menú">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 21" xml:space="preserve">
+              <path d="M0,17.2v-1.7h20v1.7H0z M0,11.3V9.7h20v1.7H0z M0,5.5V3.8h20v1.7H0z"></path>
+              </svg>
+              Menú
+            </button>
+          </div>
+          <div class="search-form" id="search-form">
+            <div class="Search">
+              <form id="form-search_topbar" action="/search" accept-charset="UTF-8" method="get">
+  <label for="input-search" class="u-hideVisually">Buscador:</label>
+  <input type="text" name="term" id="input-search" class="Search-input" placeholder="Buscar" title="Buscar" aria-label="Buscar" />
+  <button class="Search-button" type="submit" aria-label="Buscar">
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-search-line"></use></svg>
+  </button>
+</form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navButtonWrap u-md-hide">
+        <button class="js-navTrigger Button--w-icon">
+          <span class="menu">
+            <!-- SVG hamburguesa inline -->
+            <svg fill="#000000" height="14" width="14" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 14 14"><path d="M13.1,7.7H0.9C0.5,7.7,0.2,7.4,0.2,7s0.3-0.8,0.8-0.8h12.1c0.4,0,0.8,0.3,0.8,0.8S13.5,7.7,13.1,7.7z"></path><path d="M13.1,11.8H0.9c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8h12.1c0.4,0,0.8,0.3,0.8,0.8S13.5,11.8,13.1,11.8z"></path><path d="M13.1,3.7H0.9C0.5,3.7,0.2,3.4,0.2,3s0.3-0.8,0.8-0.8h12.1c0.4,0,0.8,0.3,0.8,0.8S13.5,3.7,13.1,3.7z"></path></svg>
+            <span class="u-hideVisually">Abrir </span>
+          </span>
+          <span class="close">
+            <!-- SVG cerrar inline -->
+            <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 14 14"><path d="M1.9,12.7c-0.2,0-0.3-0.1-0.4-0.2c-0.2-0.2-0.2-0.6,0-0.9L11.6,1.5c0.2-0.2,0.6-0.2,0.9,0c0.2,0.2,0.2,0.6,0,0.9L2.4,12.5C2.3,12.6,2.1,12.7,1.9,12.7z"></path><path d="M12,12.6c-0.2,0-0.3-0.1-0.4-0.2l-10-10c-0.2-0.2-0.2-0.6,0-0.9s0.6-0.2,0.9,0l10,10c0.2,0.2,0.2,0.6,0,0.9C12.3,12.5,12.1,12.6,12,12.6z"></path></svg>
+            <span class="u-hideVisually">Cerrar </span>
+          </span>	
+          <span>Menú</span>
+        </button>
+      </div>
+      <div class="searchButtonWrap u-md-hide">
+        <button class="js-searchTrigger Button--w-icon">
+          <span class="search">
+            <span class="u-hideVisually">Abrir buscador</span>
+            <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 14 14"><path d="M5.9,10.9C3.2,10.9,1,8.7,1,5.9S3.2,1,5.9,1s4.9,2.2,4.9,4.9S8.7,10.9,5.9,10.9z M5.9,1.9c-2.2,0-4.1,1.8-4.1,4.1S3.7,10,5.9,10C8.2,10,10,8.2,10,5.9S8.2,1.9,5.9,1.9z"></path><path d="M9.4,8.8l3.6,3.6L12.4,13L8.8,9.4L9.4,8.8z"></path></svg>
+          </span>
+          <span class="close">
+            <span class="u-hideVisually">Cerrar buscador</span>
+            <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 14 14"><path d="M1.9,12.7c-0.2,0-0.3-0.1-0.4-0.2c-0.2-0.2-0.2-0.6,0-0.9L11.6,1.5c0.2-0.2,0.6-0.2,0.9,0c0.2,0.2,0.2,0.6,0,0.9L2.4,12.5C2.3,12.6,2.1,12.7,1.9,12.7z"></path><path d="M12,12.6c-0.2,0-0.3-0.1-0.4-0.2l-10-10c-0.2-0.2-0.2-0.6,0-0.9s0.6-0.2,0.9,0l10,10c0.2,0.2,0.2,0.6,0,0.9C12.3,12.5,12.1,12.6,12,12.6z"></path></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+    <div id="menu-bar-container">
+      <div id="menu-bar" class="menu-bar__container">
+  <div class="menu-bar">
+
+    <div class="menu-bar__breadcrumb-desktop">
+      <div class="menu-bar__breadcrumb-desktop__dropdown-wrapper">
+  <a class="menu-bar__breadcrumb-desktop__dropdown-trigger" href="https://plataformaparticipacionciudadana.gub.uy/">
+    <svg width="1em" height="1em" role="img" aria-hidden="true" class="pointer-events-none"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-home-2-line"></use></svg><span class="sr-only">Inicio</span>
+</a></div>
+
+
+  <span>/</span>
+    
+      <span class="menu-bar__breadcrumb-desktop__dropdown-trigger no-interactive" tabindex="0" aria-current="page">Procesos</span>
+
+
+    </div>
+    
+    <div class="menu-bar__breadcrumb-mobile">
+      <div class="menu-bar__breadcrumb-mobile__dropdown-trigger">
+  <span>
+      <span class="cursor-pointer " aria-current="page">
+          Procesos
+      </span>
+  </span>
+</div>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+  </header>
+
+
+  <div id="content" data-content>
+    
+      
+
+      
+  
+
+
+
+
+
+<div class="layout-2col">
+  <aside class="layout-2col__aside">
+      <h1 class="title-decorator">Procesos</h1>
+
+  
+  <form class="new_filter self-stretch" data-filters="" data-component="accordion" action="/processes" accept-charset="UTF-8" data-remote="true" method="get"><input type="hidden" name="per_page" value="100" autocomplete="off" />
+
+    <button id="dropdown-trigger-filters" data-component="dropdown" data-target="dropdown-menu-filters" data-open-md="true">
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-down-s-line"></use></svg>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-up-s-line"></use></svg>
+      <span>
+        Filtra
+      </span>
+    </button>
+
+    <div id="dropdown-menu-filters">
+        <a class="filter-skip" role="menuitem" href="#processes-grid">Saltar a los resultados</a>
+      <p class="filter-help" role="menuitem" aria-disabled="true">El siguiente formulario filtra los resultados de búsqueda dinámicamente cuando se cambian las condiciones de búsqueda.</p>
+
+
+        <div class="filter-container" role="menuitem">
+  <button id="trigger-menu-date" data-controls="panel-dropdown-menu-date" data-open="false" data-open-md="true">
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-down-s-line"></use></svg>
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-up-s-line"></use></svg>
+    <span>Fecha</span>
+  </button>
+  <div id="panel-dropdown-menu-date">
+    <input type="hidden" name="filter[with_date]" value="" autocomplete="off" />
+      <div class="filter">
+        <label for="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_date_all"><input class="reset-defaults" type="radio" value="all" checked="checked" name="filter[with_date]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_date_all" /><span>Todos</span><span></span></label>
+      </div>
+
+      <div class="filter">
+        <label for="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_date_upcoming"><input class="reset-defaults" type="radio" value="upcoming" name="filter[with_date]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_date_upcoming" /><span>Próximos</span><span></span></label>
+      </div>
+
+      <div class="filter">
+        <label for="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_date_past"><input class="reset-defaults" type="radio" value="past" name="filter[with_date]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_date_past" /><span>Pasados</span><span></span></label>
+      </div>
+
+      <div class="filter">
+        <label for="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_date_active"><input class="reset-defaults" type="radio" value="active" name="filter[with_date]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_date_active" /><span>Activos</span><span></span></label>
+      </div>
+  </div>
+</div>
+
+        <div class="filter-container" role="menuitem">
+  <button id="trigger-menu-scope" data-controls="panel-dropdown-menu-scope" data-open="false" data-open-md="true">
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-down-s-line"></use></svg>
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-up-s-line"></use></svg>
+    <span>Ámbito</span>
+  </button>
+
+  <div id="panel-dropdown-menu-scope">
+    
+  <input type="hidden" name="filter[with_any_scope][]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_any_scope_all" value="" autocomplete="off" />
+
+<div class="filter">
+  <label data-global-checkbox="" for="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_any_scope_"><input class="reset-defaults" data-checkboxes-tree="with_any_scope_" value="" type="checkbox" name="filter[with_any_scope][]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_any_scope_" />  <span id="dropdown-title-with_any_scope_">Todos</span><span></span>
+</label>
+</div>
+
+
+          
+
+<div class="filter">
+  <label data-children-checkbox="with_any_scope_" for="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_any_scope_global"><input class="reset-defaults" value="global" type="checkbox" name="filter[with_any_scope][]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_any_scope_global" />  <span id="dropdown-title-with_any_scope_global">Alcance global</span><span></span>
+</label>
+</div>
+
+
+
+
+  </div>
+</div>
+
+        <div class="filter-container" role="menuitem">
+  <button id="trigger-menu-area" data-controls="panel-dropdown-menu-area" data-open="false" data-open-md="true">
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-down-s-line"></use></svg>
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-arrow-up-s-line"></use></svg>
+    <span>Área</span>
+  </button>
+
+  <div id="panel-dropdown-menu-area">
+    
+  <input type="hidden" name="filter[with_any_area][]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_any_area_all" value="" autocomplete="off" />
+
+<div class="filter">
+  <label data-global-checkbox="" for="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_any_area_"><input class="reset-defaults" value="" type="checkbox" name="filter[with_any_area][]" id="filters_c065572a-4ad3-4f2c-8e2a-c08149825d46_filter_with_any_area_" />  <span id="dropdown-title-with_any_area_">Todas</span><span></span>
+</label>
+</div>
+
+
+  </div>
+</div>
+
+
+      
+    </div>
+
+</form>
+
+  </aside>
+  <main class="layout-2col__main">
+    
+    
+
+  <div id="floating-helper-tip" data-floating-help>
+  <button class="button button__xs button__text-secondary py-1" data-dialog-open="floating-helper-block">
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-question-line"></use></svg>
+    <span>Ayuda</span>
+  </button>
+</div>
+
+<div id="floating-helper-block" data-dialog="floating-helper-block"><div id="floating-helper-block-content"><button type="button" data-dialog-close="floating-helper-block" data-dialog-closable="" aria-label="Cerrar el modal">&times</button>
+  <div data-dialog-container>
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-question-line"></use></svg>
+    <h3 id="dialog-title-floating-helper-block" data-dialog-title>Ayuda</h3>
+    <div class="editor-content">
+      <p>Un <strong>proceso participativo</strong> es una secuencia de actividades presenciales y/o virtuales que tienen por objetivo recibir aportes, definir y/o tomar decisiones sobre un tema específico.</p><p>Algunos ejemplos de procesos participativos son: consulta pública, cocreación de iniciativas o planes de acción, construcción colaborativa de documentos, presupuestos participativos, entre otros.
+</p>
+    </div>
+  </div>
+</div></div>
+
+
+  <section id="processes-grid" class="layout-main__section layout-main__heading">
+    <h2 class="h5 md:h3 decorator">86 procesos</h2>
+
+<div class="card__grid-grid">
+  <a class="card__grid" id="participatory_process_188" href="/processes/evaluacion-trastorno-espectro-autista">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta sobre terapias alternativas para el Trastorno del Espectro Autista (TEA)" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkSFpoYnpsbWRuTXlZWEYzZDNobWNqTXpkelpyTW5semNERmhid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtsQklISnZiWEJsWTJGaVpYcGhjeTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowbEJKVEl3Y205dGNHVmpZV0psZW1GekxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMi45NDRaIiwicHVyIjoiYmxvYl9rZXkifX0=--1fc38f6b1de4aa0d65a5f6400f195d4e73e3d64f/IA%20rompecabezas.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta sobre terapias alternativas para el Trastorno del Espectro Autista (TEA)</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0.6842105263157895;"></span>queda 13 días
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Recepción de aportes
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_179" href="/processes/pencti-publica">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Elaboración del Plan Estratégico Nacional de Ciencia, Tecnología e Innovación (PENCTI) 2026" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjMjh5YVc4d2VUUjRkekIzZDNOeWRURTRObk5sY1cxck5XbHhjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtsdFlXZGxiaUJrWlNCbWIyNWtieUIzWldJZ2MyVnVZMmt1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZEpiV0ZuWlc0bE1qQmtaU1V5TUdadmJtUnZKVEl3ZDJWaUpUSXdjMlZ1WTJrdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMi45NTdaIiwicHVyIjoiYmxvYl9rZXkifX0=--7b2e6769b5eeb938c27726e07976692ce660bc1a/Imagen%20de%20fondo%20web%20senci.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Elaboración del Plan Estratégico Nacional de Ciencia, Tecnología e Innovación (PENCTI) 2026</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0.42857142857142855;"></span>queda 6 días
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Validación por parte del Consejo Estratégico Ministerial (CEM)
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_187" href="/processes/estrategia-nacional-desarrollo">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Proceso de elaboración de la Estrategia Nacional de Desarrollo" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMkpvTVdkaGVHczRlRE16ZDJkM2FEbDNiM0o1YzNSbmFISnhNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KaGJtNWxjaUJ3YjNKMFlXUmhJRzl3Y0M1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoYm01bGNpVXlNSEJ2Y25SaFpHRWxNakJ2Y0hBdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMi45NjhaIiwicHVyIjoiYmxvYl9rZXkifX0=--b2fb050110029aa57b1064c5c7509632f0bb59cf/banner%20portada%20opp.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Proceso de elaboración de la Estrategia Nacional de Desarrollo</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/08/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Ánalisis de los aportes
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_190" href="/processes/desarrollo-institucional-discapacidad">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública: Desarrollo institucional para las políticas de discapacidad" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhORzh6Y0dWbWJqRm5lRzFxZEhveFpYVnphbXcwTW5GaGRqZG9aZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOcGJrSmhjbkpsY21GeklHZHlZVzVrWlM1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMU5wYmtKaGNuSmxjbUZ6SlRJd1ozSmhibVJsTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMyLjk3N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--8a79213d060eb041b93e17a6f0dce398876b2856/SinBarreras%20grande.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública: Desarrollo institucional para las políticas de discapacidad</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 02/08/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Análisis y sistematización
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_189" href="/processes/participacion-ninos-ninas-adolescentes-entornos-digitales">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública y participación multiactores sobre niñas, niños y adolescentes, entornos digitales e inteligencia artificial" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkVFV4Wkdwc1lUTnVaR3h0ZGpVMlltRnJiekpyZVcwNVpIVjNiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KaGJtNWxjaUJPVGtFZ1kyaHBZMjhnTWk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkpoYm01bGNpVXlNRTVPUVNVeU1HTm9hV052SlRJd01pNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuMDIzWiIsInB1ciI6ImJsb2Jfa2V5In19--d875d22f46bc63e5c8b8c31b92d164e76f036ee6/banner%20NNA%20chico%202.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública y participación multiactores sobre niñas, niños y adolescentes, entornos digitales e inteligencia artificial</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0.02531645569620253;"></span>queda 2 días
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Consulta abierta e intercambio multiactor
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_178" href="/processes/plan-nacional-genero">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública sobre el Plan Nacional de Género y por una vida libre de violencia basada en género hacia las mujeres" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNMjU1TjJGclpqYzJNV2M0ZEdVemJHODJkakIxYmpkdE5tNXRaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaUJ3Y205MmFYTnZjbWxoSUhCeWIyTmxjMjhnYVc1dGRXcGxjbVZ6TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25hVzFoWjJWdUpUSXdjSEp2ZG1semIzSnBZU1V5TUhCeWIyTmxjMjhsTWpCcGJtMTFhbVZ5WlhNdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4wMzdaIiwicHVyIjoiYmxvYl9rZXkifX0=--365542b4b6a2e87d3ca7453a40c7744f42b307ee/imagen%20provisoria%20proceso%20inmujeres.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública sobre el Plan Nacional de Género y por una vida libre de violencia basada en género hacia las mujeres</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 19/07/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Publicación y presentación territorial del Plan Nacional de Género
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_170" href="/processes/segundo-plan-eduacion-ddhh">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Hacia el Segundo Plan Nacional de Educación en Derechos Humanos (PNEDH)" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhekozZUhWMGFEZGhNVEUyTm5sc05YRndlbTF2TjJNNGVYVjNNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCT1JVUkVTRWd1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZFFUa1ZFUkVoSUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4wNDlaIiwicHVyIjoiYmxvYl9rZXkifX0=--0c40f40281b2ba43d6bbb755a916bb1a024033c2/PNEDDHH.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Hacia el Segundo Plan Nacional de Educación en Derechos Humanos (PNEDH)</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 20/07/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Análisis de los aportes realizados en la consulta pública:
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_174" href="/processes/fortalecimiento-radiodifusion-2025-2029">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública sobre la Hoja de Ruta para el fortalecimiento de la radiodifusión comunitaria (2025–2029)" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibk5sTjJJNWF6WnplVGhqTm5wbE56azBlbmd5WnpNd2RYTnpPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KaGJtNWxjaUF6T0RRd2VETTROREFnYldsbGJTQXhMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblltRnVibVZ5SlRJd016ZzBNSGd6T0RRd0pUSXdiV2xsYlNVeU1ERXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuMDY2WiIsInB1ciI6ImJsb2Jfa2V5In19--ab469e7fe41067eeeeb27395bb3e1240e55674db/banner%203840x3840%20miem%201.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública sobre la Hoja de Ruta para el fortalecimiento de la radiodifusión comunitaria (2025–2029)</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 22/06/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Elaboración de versión final
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_171" href="/processes/actualizacion-productos-canasta">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Actualización de productos de la canasta del hogar" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjWEIyZG1oNFkzVnphekYwZEhjeE5tbzJlVEp1YmprMU1tOXRhZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKVlpHVmpieUFsTWpnek9EUXdJSGdnTVRnME1DQndlQ1V5T1NBbE1qZzFKVEk1TG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25WV1JsWTI4bE1qQWxNamd6T0RRd0pUSXdlQ1V5TURFNE5EQWxNakJ3ZUNVeU9TVXlNQ1V5T0RVbE1qa3VjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuMTIwWiIsInB1ciI6ImJsb2Jfa2V5In19--9e02e4b570813b7f6d885fc39882f3b92420363f/Udeco%20(3840%20x%201840%20px)%20(5).png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Actualización de productos de la canasta del hogar</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/07/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Análisis y sistematización de la información
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_169" href="/processes/fondos-concursables-cultura-2026">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública para actualizar el Fondo Concursable para la Cultura " src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjSE52TjNWeE4yeG9NMjAxTlhVNVpHbHphM1IyT1dsc2IyVnBkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtaRFExOUJaMlZ6YVdNZ1EyOXVJR3h2WjI4Z1JFNURMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblJrTkRYMEZuWlhOcFl5VXlNRU52YmlVeU1HeHZaMjhsTWpCRVRrTXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuMTM5WiIsInB1ciI6ImJsb2Jfa2V5In19--09602ff944ad659de4eed352a649363d290b5907/FCC_Agesic%20Con%20logo%20DNC.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública para actualizar el Fondo Concursable para la Cultura </h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 07/08/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Análisis y publicación
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_168" href="/processes/norma-radioterapia-2026">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública sobre Norma UY 123 de Radioterapia - 2026" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNMkp5ZVdNeGNuUnZkMmt4TmpCNE16UnRaM2xzWm0xdWFIY3hhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xcFpXMWZjRzl5ZEdGa1lTNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjIxcFpXMWZjRzl5ZEdGa1lTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuMTU0WiIsInB1ciI6ImJsb2Jfa2V5In19--ea8567bfddcbe71cbc94d1d4d4380b98820db028/miem_portada.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública sobre Norma UY 123 de Radioterapia - 2026</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 16/05/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Elaboración y publicación de la versión definitiva de la norma
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_166" href="/processes/ods-6-7-9-11-17">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Aportes de la ciudadanía para la elaboración del &amp;quot;Informe País de los Objetivos de Desarrollo Sostenible (ODS)&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVzAwYm5ScE9HcGlkSGxqZG0xbFptbHFialJwTVRoMU1UWTBZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlScGJteHBibVU3SUdacGJHVnVZVzFsUFNKUWNtOWpaWE52SUdGamRHbDJiM01nWW1GdWJtVnlJR05vYVdOdklIQnNZWFJoWm05eWJXRXVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkUWNtOWpaWE52SlRJd1lXTjBhWFp2Y3lVeU1HSmhibTVsY2lVeU1HTm9hV052SlRJd2NHeGhkR0ZtYjNKdFlTNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4xNzVaIiwicHVyIjoiYmxvYl9rZXkifX0=--03ef7f9b7934e15ec649fb8097333a72a64ba0f9/Proceso%20activos%20banner%20chico%20plataforma.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Aportes de la ciudadanía para la elaboración del &quot;Informe País de los Objetivos de Desarrollo Sostenible (ODS)&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 22/03/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Cierre y publicación del Informe Nacional Voluntario  2026 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_165" href="/processes/transporte-publico-montevideo">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública sobre el transporte público en Montevideo" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNbk16Ym1GdGVIWmplR1J3YjJob09UQm9OV1ZrTmpnemFYaDJkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxSeVlXNXpjRzl5ZEdVZ2MybHVJR04xZEdOellTQXhMbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoxUnlZVzV6Y0c5eWRHVWxNakJ6YVc0bE1qQmpkWFJqYzJFbE1qQXhMbXB3WldjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjIzMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0f0eaa0d39180a8b935057d6b772c38b58c89e92/Transporte%20sin%20cutcsa%201.jpeg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública sobre el transporte público en Montevideo</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 04/05/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Cierre de la documentación de la Consulta
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_173" href="/processes/plan-juventudes-2025-2030">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan de Acción de Juventudes 2025 - 2030" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR0UyWlhvME4yaHRaMkl5ZG1kdWRHRjFOR05xY0hsbVpHMW5PQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFd01EQXhPVE0wTURJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWN4TURBd01Ua3pOREF5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjI0OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--863e507471d7107d29ecd4abce39dfe76b415ae5/1000193402.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan de Acción de Juventudes 2025 - 2030</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0.0912863070539419;"></span>queda 22 días
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Participación presencial
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_163" href="/processes/biblioteca-nacional">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Proceso de participación - Biblioteca del futuro" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjamMxYW04ek9YUTRZbk5oY3pWaU5Hb3piekZzZDNwb1puY3hkQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KcFltNWhYM0JzWVhSaFptOXliV0V1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZGlhV0p1WVY5d2JHRjBZV1p2Y20xaExuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4yNjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--54e162b779d802040195f4d8807f44db95e4080f/bibna_plataforma.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Proceso de participación - Biblioteca del futuro</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/04/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Consolidación de resultados
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_147" href="/processes/consejo2025">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Elecciones de representantes para el Consejo Asesor Honorario de Discapacidad - 2025" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhbWQyZWpGM2RtNW9PWGgyYURZNGNIVnFkWE5tTm5kdWVteHVlQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtOdmJuTmxhbThnWVRFdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWREYjI1elpXcHZKVEl3WVRFdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4yODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--92ea7f06874f1e7132dece2d6ef07662c2ce0b84/Consejo%20a1.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Elecciones de representantes para el Consejo Asesor Honorario de Discapacidad - 2025</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_150" href="/processes/a-tu-servicio">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública AtuServicio.uy" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiREJ2TVhSaWFXTTRkbWRxY2pNMWNIYzNjbXA1YldObWJtcDRhUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1OdmJuTjFiSFJoWDNCc1lYUmhabTl5YldFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqYjI1emRXeDBZVjl3YkdGMFlXWnZjbTFoTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjMyMloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--24ad242be7daafd039704b81685d1fd01cc6b58e/consulta_plataforma.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública AtuServicio.uy</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 28/02/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Cierre de la consulta
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_151" href="/processes/plan-nacional-discapacidad">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Uruguay sin Barreras: Plan Nacional por la Accesibilidad y los Derechos de las Personas con Discapacidad" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOamRtWTNaNE1USTRjVzEzZEhSc1pHOXZabU4zZFhBMmFHczRjQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCc1lXNGdibUZqYVc5dVlXd2daR1VnWkdselkyRndZV05wWkdGa0xqTXVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkUWJHRnVKVEl3Ym1GamFXOXVZV3dsTWpCa1pTVXlNR1JwYzJOaGNHRmphV1JoWkM0ekxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4zNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--0c0b6c4851826892620fe047a5d927075f41fe3f/Plan%20nacional%20de%20discapacidad.3.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Uruguay sin Barreras: Plan Nacional por la Accesibilidad y los Derechos de las Personas con Discapacidad</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/05/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Cierre y publicación del Plan
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_124" href="/processes/rotulado-alimentos-envasados">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Reglamento Técnico MERCOSUR para Rotulado de Alimentos Envasados - Proyecto Resolución Nº 03/25 Revisión 1" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjV1Z2ZVhsNmNtdzFNbmQzY1RKMWRXSmtkbVl6WVhCdGIzbGxOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFvYUdGaExURTJNakV4TlRNM0lDVXlPREVsTWprdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRhR2hoWVMweE5qSXhNVFV6TnlVeU1DVXlPREVsTWprdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4zNTNaIiwicHVyIjoiYmxvYl9rZXkifX0=--60cd56376be6b7dcb2c364791724431ae27f9759/pexels-hhaa-16211537%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Reglamento Técnico MERCOSUR para Rotulado de Alimentos Envasados - Proyecto Resolución Nº 03/25 Revisión 1</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 21/01/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 1: Publicación y Consulta del Proyecto de Resolución
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_126" href="/processes/rotulado-nutricional-alimentos-envasados">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Reglamento Técnico MERCOSUR sobre Rotulado Nutricional de Alimentos Envasados - Proyecto Resolución Nº 05/25" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhWGcxY3pOb01ubGtkV2c0Y1RaNE9ETnBjSGMyY0cxaFpEbGpNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFvYUdGaExURTJNakV4TlRNM0lDVXlPREVsTWprdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRhR2hoWVMweE5qSXhNVFV6TnlVeU1DVXlPREVsTWprdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4zNjVaIiwicHVyIjoiYmxvYl9rZXkifX0=--80c5f85e5a517631f150870514b2c1cd6f60c431/pexels-hhaa-16211537%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Reglamento Técnico MERCOSUR sobre Rotulado Nutricional de Alimentos Envasados - Proyecto Resolución Nº 05/25</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 21/01/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de los aportes recibidos
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_96" href="/processes/consulta73">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Modificaciones y consideraciones al Anexo II del Reglamento de Seguridad de Productos Eléctricos de Baja Tensión - Consulta Pública N° 73" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlR1YxZERSaE1UTnVNWGxqYVc1MmVtRndabkk1TkdvM1puaGhlUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWVKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKdFpXUnBkVzB0ZG1WamRHVmxlbmxmWld4bFkzUnlhV05oYkMxamFYSmpkV2wwTFdKeVpXRnJaWEp6TFdOdmJuUnliMnhzYVc1bkxYQnZkMlZ5TFdScGMzUnlhV0oxZEdsdmJsODNNVEEzTXpnNE5GOXRaV1JwZFcwdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR0WldScGRXMHRkbVZqZEdWbGVubGZaV3hsWTNSeWFXTmhiQzFqYVhKamRXbDBMV0p5WldGclpYSnpMV052Ym5SeWIyeHNhVzVuTFhCdmQyVnlMV1JwYzNSeWFXSjFkR2x2Ymw4M01UQTNNemc0TkY5dFpXUnBkVzB1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjM3NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--f95f4d815889f2ee56ee26bce4d369910cb9b2dd/medium-vecteezy_electrical-circuit-breakers-controlling-power-distribution_71073884_medium.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Modificaciones y consideraciones al Anexo II del Reglamento de Seguridad de Productos Eléctricos de Baja Tensión - Consulta Pública N° 73</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/12/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Análisis técnico de  las Propuestas recibidas 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_149" href="/processes/regional-norte-plan-estrategico">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Construcción del Plan estratégico de la Universidad de la República en la Regional Litoral Norte" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhbmR1YjJadk9XNW1jVGxrTTNSdE5HMWplSFJoT1dRelpIUjNNZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5ZeExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuZGpFdWFuQm5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lQYVcxaFoyVXZhbkJsWndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy4zODdaIiwicHVyIjoiYmxvYl9rZXkifX0=--2c222326c342046dafa8fe5126fee064f62eba86/v1.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Construcción del Plan estratégico de la Universidad de la República en la Regional Litoral Norte</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Sistematización y análisis de viabilidad
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_128" href="/processes/Homicidios">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Seguridad Pública: aportes al eje temático &amp;quot;Homicidios&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOM2R6ZDNwMU4yazVORzA1YlRKNU5EZHVORGQwZDJSamJYRm1aZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWN4TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjQyMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1fa83db7a4ea8220fd046abf51367c07f4784ca8/1.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Seguridad Pública: aportes al eje temático &quot;Homicidios&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Participar
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_134" href="/processes/armas-municiones">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios:  Plan Nacional de Seguridad Pública: aportes al eje temático &amp;quot;Armas de fuego y municiones&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMnd3YnpsdFkzSjJabmMwYUhac09YWjRhM2wxYW1wdE0zZHRid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpNdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWN6TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjQzM1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--0370364546947bf2ee030aae25a6aa2b11626300/3.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary"> Plan Nacional de Seguridad Pública: aportes al eje temático &quot;Armas de fuego y municiones&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Participar
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_137" href="/processes/sistema-justicia-criminal">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Seguridad Pública: aportes al eje temático &amp;quot;Sistema de justicia criminal&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiR05pY0d0dGJXaG9hbW94WlhGMGEzRjRhbUo0YzNCdE5XMWlPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpZdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWMyTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjQ0NVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1ee63a8796ab0acaa233f3fd804098ccabe8be14/6.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Seguridad Pública: aportes al eje temático &quot;Sistema de justicia criminal&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Participar
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_127" href="/processes/plan-nacional-seguridad-publica">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Seguridad Pública" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlbUZsYTNwNWNqRnFaelE1ZW1KNk9ETjZOMk15YlRSdU1HTmpaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCc1lXNHRNakJrWlMweU1GTmxaM1Z5YVdSaFpDNHlMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblVHeGhiaTB5TUdSbExUSXdVMlZuZFhKcFpHRmtMakl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjQ2MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--7a0543d003941605bdfbf8cbf80c49c99b797b66/Plan-20de-20Seguridad.2.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Seguridad Pública</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Encuentros por seguridad
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_136" href="/processes/ciberdelito">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Seguridad Pública: aportes al eje temático &amp;quot;Ciberdelito y fraudes informáticos&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEU0Y3pnemFucG9ZWEF3YkRkeGRqazJaV053WjNKNFpIWndjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpVdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWMxTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjQ3NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a6bd034b7c269e7ba182afed730484865139fd0a/5.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Seguridad Pública: aportes al eje temático &quot;Ciberdelito y fraudes informáticos&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Participar
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_138" href="/processes/prevencion-delito-violencia">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Seguridad Pública: aportes al eje temático &amp;quot;Sistema de prevención del delito y la violencia&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR1oyTURacGQzTmhOVzkyY0RCaWRubHZZM3AwYm10eU5HbHFOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYm1sdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtWcVpYTWdaWE4wY21GMFpXZHBZMjl6SUNVeU9EWWxNamt1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZEZhbVZ6SlRJd1pYTjBjbUYwSlVNekpVRTVaMmxqYjNNbE1qQWxNamcySlRJNUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy40ODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--81e5b2a948fb318beb4c815ea27bc6dfe92a50fa/Ejes%20estrat%C3%A9gicos%20(6).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Seguridad Pública: aportes al eje temático &quot;Sistema de prevención del delito y la violencia&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Participar
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_135" href="/processes/narcotrafico">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Seguridad Pública: aportes al eje temático &amp;quot;Narcotráfico&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZalYyZUdGNWVHMW9NR1o2T0RKMGVYTnhabTVuWlhscGQyaGpNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpRdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWMwTG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjUxNVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--81af131c6a456948989cf0e8e43fe7a22a7ee17a/4.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Seguridad Pública: aportes al eje temático &quot;Narcotráfico&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Participar
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_133" href="/processes/Violencia-genero">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Seguridad Pública: aportes al eje temático &amp;quot;Violencia de género y contra niñas, niños y adolescentes&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXN4Y2pNM1ozaGhjbTVqT1hVMk0yWm1NRGhyZDJKbGFqWnRNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWN5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjUyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1f7c6200c9dcedcddf7c88f10e64214ac5ef82ca/2.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Seguridad Pública: aportes al eje temático &quot;Violencia de género y contra niñas, niños y adolescentes&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Participar
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_123" href="/processes/indicacion-cuantitativa-cosmeticos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Reglamento Técnico MERCOSUR para la Indicación Cuantitativa de Cosméticos - Proyecto Resolución Nº 02/25" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaV3MxYlc4MU5HeGpObXh1WkdaNGNUZGlhREowZDNVNE9YSjBPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFqYjNSMGIyNWljbTh0TXprNU56TTBOeUFsTWpneEpUSTVMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmNHVjRaV3h6TFdOdmRIUnZibUp5Ynkwek9UazNNelEzSlRJd0pUSTRNU1V5T1M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy41MzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--2ac109819ae264b8597a2763e65093896d585758/pexels-cottonbro-3997347%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Reglamento Técnico MERCOSUR para la Indicación Cuantitativa de Cosméticos - Proyecto Resolución Nº 02/25</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 18/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_122" href="/processes/contaminantes-metalicos-metaloides-alimentos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Reglamento Técnico MERCOSUR sobre límites máximos de contaminantes metálicos y metaloides en alimentos - Proyecto Resolución Nº 07/23" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlblZ3TURBM2VqUmxNekp4TWpGa2EzZGtaVFZ3TkRnMGFXUXpaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVpacGJteHBibVU3SUdacGJHVnVZVzFsUFNKemRYSjBhV1J2TFdSbExXRmliMjV2TFdKaGMyVXRaR1V0WVd4cGJXVnVkRzl6TFhCdlpISnBaRzl6SUNVeU9ERWxNamt1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHpkWEowYVdSdkxXUmxMV0ZpYjI1dkxXSmhjMlV0WkdVdFlXeHBiV1Z1ZEc5ekxYQnZaSEpwWkc5ekpUSXdKVEk0TVNVeU9TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuNTU0WiIsInB1ciI6ImJsb2Jfa2V5In19--1ec4a82c6c3cc88d12ae209529650afcd39e08a3/surtido-de-abono-base-de-alimentos-podridos%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Reglamento Técnico MERCOSUR sobre límites máximos de contaminantes metálicos y metaloides en alimentos - Proyecto Resolución Nº 07/23</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 18/11/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 1: Publicación y Consulta del Proyecto de Resolución
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_120" href="/processes/dialogo-social">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Diálogo Social" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMjVpTkRrd1pUZG9PWG8wZW5kM2FtaDRNSFl6T0dwcU4zUTJjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaUJpWVc1dVpYSWdaR1ZzSUhCeWIyTmxjMjh1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHBiV0ZuWlc0bE1qQmlZVzV1WlhJbE1qQmtaV3dsTWpCd2NtOWpaWE52TG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjU2NloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--1dac8cd018cefe07795db2f114b5afe66f397a0c/imagen%20banner%20del%20proceso.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Diálogo Social</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/04/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Cierre
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_118" href="/processes/estrategia-drogas-sociedad-civil-trabajadores">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Estrategia Nacional de Drogas 2026-2030. Sociedad civil y trabajadores" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOamt5Ym1KeU5tc3djRGRyTVdOb2VuTnBNSFJtTXpoNk5XRXphd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5OdlkybGxaR0ZrTFRJd1kybDJhV3d1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHpiMk5wWldSaFpDMHlNR05wZG1sc0xtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy41NzZaIiwicHVyIjoiYmxvYl9rZXkifX0=--b2e6222c1dce77f7621bd552e7317136ccec2c3e/sociedad-20civil.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Estrategia Nacional de Drogas 2026-2030. Sociedad civil y trabajadores</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 08/09/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de los propuestas recibidas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_116" href="/processes/estrategia-drogas-consulta-publica">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Estrategia Nacional de Drogas 2026-2030. Consulta Pública" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjREo2YTJwME0yRTVaek40Tm1ocGRqSXdhbkZxYTNsMmNXYzBZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtGblpYTnBZeUJNYVc1a2EyVmthVzR1TWk1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMEZuWlhOcFl5VXlNRXhwYm1SclpXUnBiaTR5TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjYyN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--69d78775f7857b2c31cf390d1c0a7d7202f602fb/Agesic%20Lindkedin.2.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Estrategia Nacional de Drogas 2026-2030. Consulta Pública</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 08/09/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de las propuestas recibidas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_119" href="/processes/estrategia-drogas-sector-publico">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Estrategia Nacional de Drogas 2026-2030. Consulta al Sector Público" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSEY1TlhJNVozUmlkRGR5Y0hCa1kyWjJObVZtZURWaGRqa3dOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1admRHOHRNakJ6WldOMGIzSXRNakJ3ZFdKc2FXTnZMVEl3TURJdU1pNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJadmRHOHRNakJ6WldOMGIzSXRNakJ3ZFdKc2FXTnZMVEl3TURJdU1pNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuNjQxWiIsInB1ciI6ImJsb2Jfa2V5In19--cc672a78c6c8c3014d9ca9834cfbe17f2582ba95/foto-20sector-20publico-2002.2.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Estrategia Nacional de Drogas 2026-2030. Consulta al Sector Público</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 08/09/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de los propuestas recibidas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_115" href="/processes/estrategia-drogas">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Estrategia Nacional de Drogas 2026 -2030" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaWEI1TUdOdVkyczNOV3cwTmpkeGFqZDJZelY1WTNGNlpIUnZPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxibDlJYVdKeWFXUmhYMHBPUkY4d01TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJsdFlXZGxibDlJYVdKeWFXUmhYMHBPUkY4d01TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuNjU5WiIsInB1ciI6ImJsb2Jfa2V5In19--c1c6cc3d780f2cde71f2de93e11e06661372032b/imagen_Hibrida_JND_01.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Estrategia Nacional de Drogas 2026 -2030</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 08/09/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de las propuestas recibidas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_66" href="/processes/evaluacion-plataforma">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Queremos conocer su experiencia en la Platafoma de Participación Ciudadana Digital" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbk5xZHpJNU1tbzBaekJpTnpOdGVXazBZbWh2TURCd2R6QTNlQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpY1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtsdFoxOXdZWEowYVdOcGNHRmphVzl1SUdOcGRXUmhaR0Z1WVMwd05pNXdibWNpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjBsdFoxOXdZWEowYVdOcGNHRmphVzl1SlRJd1kybDFaR0ZrWVc1aExUQTJMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuNjc0WiIsInB1ciI6ImJsb2Jfa2V5In19--41d740be2e4757943acfedc5c0f7e37707463905/Img_participacion%20ciudadana-06.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Queremos conocer su experiencia en la Platafoma de Participación Ciudadana Digital</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/12/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Encuesta sobre su experiencia
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_95" href="/processes/consulta72">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Propuesta de revisión de costos eficientes del sistema de envasado y distribución de gas licuado de petróleo (GLP) y la metodología para el cálculo del Precio Máximo Intermedio Definitivo (PMI) y de los márgenes de distribución y envasado eficientes - Consulta Pública N° 72" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjREJuZDJ3MlluaHNPVGhvZURWcWJXaDRjbXAxZURGaVkzTmlZUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtkc2NDNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjBkc2NDNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuNjg4WiIsInB1ciI6ImJsb2Jfa2V5In19--1d6e64f7bf258e0425d1405fb3529d3f81836cea/Glp.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Propuesta de revisión de costos eficientes del sistema de envasado y distribución de gas licuado de petróleo (GLP) y la metodología para el cálculo del Precio Máximo Intermedio Definitivo (PMI) y de los márgenes de distribución y envasado eficientes - Consulta Pública N° 72</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 10/07/2026
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Respuesta a las Propuestas recibidas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_94" href="/processes/consulta71">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Modificaciones al Reglamento de Seguridad de Generadores de Vapor - Consulta Pública N° 71" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaV1pwYlc0MWJXUmhkbUowYTNGNk5HcDFlbk0zTURKbmVISjFNQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1admRHOGdSMlZ1WlhKaFpHOXlJR1JsSUhaaGNHOXlJQzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyWnZkRzhsTWpCSFpXNWxjbUZrYjNJbE1qQmtaU1V5TUhaaGNHOXlKVEl3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjcwMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3d9dbd6ad5dbb105e6495f2d0dd6072d4514b24d/foto%20Generador%20de%20vapor%20.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Modificaciones al Reglamento de Seguridad de Generadores de Vapor - Consulta Pública N° 71</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 01/08/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Incorporación de las Propuestas recibidas al trámite administrativo 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_107" href="/processes/proyecto-resolucion-aditivos-alimentarios">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: “Modificación de las Resoluciones GMC Nº 50/97, 53/98, 51/00, 08/06 y 09/07 sobre Aditivos Alimentarios” - Proyecto Resolución Nº 01/25 " src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaalkwWWpJd1l6VnRhbTVpZVhoa2JHUmllV2MyTWpnM01XUXljZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1OdmIydHBaWE10TlRRM05qTTJYekV5T0RBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRqYjI5cmFXVnpMVFUwTnpZek5sOHhNamd3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjcyNFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ae0ef4e32cb5f89ee90bfc8c081e199f65e0d1f7/cookies-547636_1280.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">“Modificación de las Resoluciones GMC Nº 50/97, 53/98, 51/00, 08/06 y 09/07 sobre Aditivos Alimentarios” - Proyecto Resolución Nº 01/25 </h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 11/07/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_100" href="/processes/coavi-coaot">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Participación para la construcción de la política de vivienda y ordenamiento territorial" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhibWg1YW1wNWNXMXpkSEl6T1RoNVluWnhiRGh2T1hwNGVEY3dOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlwcGJteHBibVU3SUdacGJHVnVZVzFsUFNKWGFHRjBjMEZ3Y0NCSmJXRm5aU0F5TURJMUxUQTBMVEkxSUdGMElERXhMak01TGpFeklFRk5MbXB3WldjaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoxZG9ZWFJ6UVhCd0pUSXdTVzFoWjJVbE1qQXlNREkxTFRBMExUSTFKVEl3WVhRbE1qQXhNUzR6T1M0eE15VXlNRUZOTG1wd1pXY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy43MzlaIiwicHVyIjoiYmxvYl9rZXkifX0=--e58cc34f970a5307666ce0eda288acec9d1f4006/WhatsApp%20Image%202025-04-25%20at%2011.39.13%20AM.jpeg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Participación para la construcción de la política de vivienda y ordenamiento territorial</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/06/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Cierre del documento para su aprobación
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_97" href="/processes/sexto-planGA">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Proceso de cocreación del Sexto Plan de Acción Nacional de Gobierno Abierto" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkVEk0WXpONmRXUTNOVE40ZUdsMWNYRXlhMmxtYWpsbFpqaG9jd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlacGJteHBibVU3SUdacGJHVnVZVzFsUFNKUWIzSjBZV1JoTFhCaGNuUnBZMmx3WVdOcGIyNHRZMmwxWkdGa1lXNWhMVWRCTFRNNE5EQjRNemcwTUM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMUJ2Y25SaFpHRXRjR0Z5ZEdsamFYQmhZMmx2YmkxamFYVmtZV1JoYm1FdFIwRXRNemcwTUhnek9EUXdMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuNzUxWiIsInB1ciI6ImJsb2Jfa2V5In19--ea1199d3cd70eac9b4d123cc4389c849c2711596/Portada-participacion-ciudadana-GA-3840x3840.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Proceso de cocreación del Sexto Plan de Acción Nacional de Gobierno Abierto</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 28/08/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Publicación y aprobación
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_99" href="/processes/defensoria-migrantes">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: La Defensoría de las vecinas y vecinos escucha a las personas migrantes" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZWEJvY0hJeWVHbDRhVGswYTJKdWVHZHFjVGMwTTJ4dVpqRXliZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlwcGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYSjBaV3hmWkdWZlRXOXVkR1YyYVdSbGIxOHRYMHRwWWkxRE15MUNNMjVmTFY5RWFYWmxjbk5wWkdGa0xtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUTJGeWRHVnNYMlJsWDAxdmJuUmxkbWxrWlc5ZkxWOUxhV0l0UXpNdFFqTnVYeTFmUkdsMlpYSnphV1JoWkM1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy43NjFaIiwicHVyIjoiYmxvYl9rZXkifX0=--86c7f7bf44c65a2858ed7f1a62e2202163b3618c/Cartel_de_Montevideo_-_Kib-C3-B3n_-_Diversidad.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">La Defensoría de las vecinas y vecinos escucha a las personas migrantes</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 21/05/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Lanzamiento
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_98" href="/processes/plan-eficiencia-energetica">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Eficiencia Energética 2025 – 2032" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNelp1Ykc5NmNIWnJkR04yYm5ZeGNEaHdabkZ3YVd4eE1XUTVNd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYW1sdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtWbWFXTnBaVzVqYVdFZ1JXNWxjbWRsZEdsallTQTBMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblJXWnBZMmxsYm1OcFlTVXlNRVZ1WlhKbkpVTXpKVUU1ZEdsallTVXlNRFF1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjc3MloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--634c37f2cbe0b47a5d4be11dbe4cde815c20397d/Eficiencia%20Energ%C3%A9tica%204.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Eficiencia Energética 2025 – 2032</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 21/03/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Evaluación de los aportes recibidos
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_92" href="/processes/reglamento-fosfatos-postres-lacteos-06-24">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: 06/24 - Consulta Pública &amp;quot;Reglamento Técnico MERCOSUR sobre uso de fosfatos en postres lácteos&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkR2xzWW1JMVltSmpOSEJ5Ykd0cE0zSXdaSFJ0ZURoclpYWnNjQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10ZDI5c1puSmhiUzFyTFRJeU5qVXhNUzA0TnpReE5qTWdKVEk0TVNVeU9TNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjNCbGVHVnNjeTEzYjJ4bWNtRnRMV3N0TWpJMk5URXhMVGczTkRFMk15VXlNQ1V5T0RFbE1qa3VhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuNzgzWiIsInB1ciI6ImJsb2Jfa2V5In19--5b7a6134668e02315e8a7e92ac45757a9e09d592/pexels-wolfram-k-226511-874163%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">06/24 - Consulta Pública &quot;Reglamento Técnico MERCOSUR sobre uso de fosfatos en postres lácteos&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 27/04/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_93" href="/processes/reglamento-envases-reciclado-grado-alimentario-07-24">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: 07/24 - Consulta Pública &amp;quot;Reglamento Técnico MERCOSUR sobre Envases de Polietilentereftalato (PET) Postconsumo Reciclado Grado Alimentario (PET-PCR grado alimentario) destinados a estar en Contacto con Alimentos&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkR1JvZUdzMWRYUmhaakJsWVdWdVpuUnBZV05pYURKMVoyVXdhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVlScGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10YldGblpHRXRaV2hzWlhKekxYQmxlR1ZzY3kweU5UUTNOVFkxSUNVeU9ERWxNamt1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdaWGhsYkhNdGJXRm5aR0V0Wldoc1pYSnpMWEJsZUdWc2N5MHlOVFEzTlRZMUpUSXdKVEk0TVNVeU9TNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuODE2WiIsInB1ciI6ImJsb2Jfa2V5In19--4bce81b6de8e7b0b946864bfe2801dd1e533bc3b/pexels-magda-ehlers-pexels-2547565%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">07/24 - Consulta Pública &quot;Reglamento Técnico MERCOSUR sobre Envases de Polietilentereftalato (PET) Postconsumo Reciclado Grado Alimentario (PET-PCR grado alimentario) destinados a estar en Contacto con Alimentos&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 27/04/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de los aportes recibidos
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_90" href="/processes/modificacion-resolucion-limites-aditivos-alimentos-04-24">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: 04/24 - Consulta Pública &amp;quot;Modificación de la Resolución Nº 63/18 «Reglamento Técnico MERCOSUR de Asignación de Aditivos y sus Límites Máximos para Carnes y Productos Cárnicos»&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlblZyWW5wd2QydDNhbnB1WmpobloyRjZZbmc0ZFhCaGREWnZjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0WVd4cExUUTFOelEwTkM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MXRZV3hwTFRRMU56UTBOQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjgyNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b5fe95dee84209bd0c73bf95150bc9760c06638a/pexels-mali-457444.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">04/24 - Consulta Pública &quot;Modificación de la Resolución Nº 63/18 «Reglamento Técnico MERCOSUR de Asignación de Aditivos y sus Límites Máximos para Carnes y Productos Cárnicos»&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 27/04/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_89" href="/processes/modificacion-resolucion-aditivos-alimentarios-03-23-rev-1">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: 03/23 Revisión 1 - Consulta Pública &amp;quot;Modificación de las Resoluciones GMC Nº 53/98, 54/98, 07/06 y 08/06 sobre Aditivos Alimentarios&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPRzF4YUc5eU56aG1hVEJ3ZVdabGFXbDVNM0o1WWpSeGEzUmhZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFtYjNScGIzTXRjR2h2ZEc5ekxUa3hPRE15TnlBbE1qZ3hKVEk1TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR1Y0Wld4ekxXWnZkR2x2Y3kxd2FHOTBiM010T1RFNE16STNKVEl3SlRJNE1TVXlPUzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjgzN1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d13e31e609360a141be342231cce39fe3c5cc4f0/pexels-fotios-photos-918327%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">03/23 Revisión 1 - Consulta Pública &quot;Modificación de las Resoluciones GMC Nº 53/98, 54/98, 07/06 y 08/06 sobre Aditivos Alimentarios&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 27/04/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de los aportes recibidos
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_91" href="/processes/modificacion-resolucion-limites-aflatoxinas-admisibles-05-04">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: 05/24 - Consulta Pública &amp;quot;Modificación de la Resolución GMC Nº 25/02 «Reglamento Técnico MERCOSUR sobre Límites Máximos de Aflatoxinas Admisibles en Leche, Maní y Maiz»&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhR2w1YjJGdGJtZHBNM0pyYkhvNU9YbHBiWHB6ZW05a1pIYzJhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVh4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10WlhKallXNHRaWFpqYVcxbGJpMDJNall6TmpVNU1UY3RNekEzTkRFeU1UUXVhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkd1pYaGxiSE10WlhKallXNHRaWFpqYVcxbGJpMDJNall6TmpVNU1UY3RNekEzTkRFeU1UUXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuODQ4WiIsInB1ciI6ImJsb2Jfa2V5In19--e6e5f1a370a0aad5a4661a06c5555e40694a7c0d/pexels-ercan-evcimen-626365917-30741214.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">05/24 - Consulta Pública &quot;Modificación de la Resolución GMC Nº 25/02 «Reglamento Técnico MERCOSUR sobre Límites Máximos de Aflatoxinas Admisibles en Leche, Maní y Maiz»&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 27/04/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de los aportes recibidos
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_84" href="/processes/Consulta69">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Anteproyecto del Reglamento de la Distribución Mayorista de Combustibles Líquidos - Consulta Pública N° 69" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhV0prWkhObFkzbGpZVzV0WVc5a01UUnJhV2xyYldnNE1USmpPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWW1sdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtOdmJuTjFiSFJoSUZCMVlteHBZMkVnTnpBdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWREYjI1emRXeDBZU1V5TUZBbFF6TWxRa0ZpYkdsallTVXlNRGN3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjg2MVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--9bc1d7942c0d6cf32b759912ad046d71bb68f754/Consulta%20P%C3%BAblica%2070.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Anteproyecto del Reglamento de la Distribución Mayorista de Combustibles Líquidos - Consulta Pública N° 69</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 31/03/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Respuesta a las Propuestas recibidas - Pronunciamiento Final 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_61" href="/processes/Consulta70">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios:  Propuesta de condiciones para la movilidad de los Distribuidores Minoristas de combustibles líquidos - Consulta Pública N° 70" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaRzFoYzJkNWVIRmhjblk0TkdVMWVXNW5iMnRrZVhFMVkyWTJPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KaGJtVnlJSFZ5YzJWaExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuWW1GdVpYSWxNakIxY25ObFlTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuODcyWiIsInB1ciI6ImJsb2Jfa2V5In19--86699e1b7ab3ac6896d5b7b2c61dfb91de6f81a8/baner%20ursea.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary"> Propuesta de condiciones para la movilidad de los Distribuidores Minoristas de combustibles líquidos - Consulta Pública N° 70</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 31/03/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Respuesta a las propuestas recibidas - Pronunciamiento Final 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_85" href="/processes/manifiesto-politica-movilidad-sostenible">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Puesta de Manifiesto de la “Política Nacional de Movilidad Urbana Sostenible”" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlV1ZoWlcxcVpHY3lkRFJxWldwcWVtWnZaV2R3WjI4eWVXOWtlZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtKcFkya3VjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkQ2FXTnBMbkJ1WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraURtbHRZV2RsTDNCdVp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuODg2WiIsInB1ciI6ImJsb2Jfa2V5In19--513b07af0d900ef033507d032e6b3f15e01b4bb8/Bici.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Puesta de Manifiesto de la “Política Nacional de Movilidad Urbana Sostenible”</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 01/11/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Incorporación de aportes e inicio del proceso de aprobación
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_83" href="/processes/consulta-publica-estrategia-datos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública de la Estrategia Nacional de Datos" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlV1V5YUhacFpERndhekYyYW1VNGR6SnFaRFpvY2pobGFHNHlZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVg1cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1lYSjBhV05wY0dGamFXOXVMV05wZFdSaFpHRnVZVjlsYzNSeVlYUmxaMmxoTFdSaGRHOXpMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmNHRnlkR2xqYVhCaFkybHZiaTFqYVhWa1lXUmhibUZmWlhOMGNtRjBaV2RwWVMxa1lYUnZjeTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjkwMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--02acab1bb24c1c7fc83bf6e03f7505a1901b8383/participacion-ciudadana_estrategia-datos.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública de la Estrategia Nacional de Datos</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 21/10/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Análisis de las propuestas recibidas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_82" href="/processes/consulta-publica-estrategia-ia">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública de la Estrategia Nacional de Inteligencia Artificial" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNVFp6ZEhWbGNXUnFOSGs1YzJkaFoyeHBiR0YxTVd4cmN6TnJOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtOdmJuTjFiSFJoSUVsQkxtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuUTI5dWMzVnNkR0VsTWpCSlFTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuOTE2WiIsInB1ciI6ImJsb2Jfa2V5In19--9becde199d51c18a0a5f04d52fe95ae6648d51de/Consulta%20IA.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública de la Estrategia Nacional de Inteligencia Artificial</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 21/10/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Cierre del documento para su aprobación
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_74" href="/processes/Consulta68">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Modificación al Reglamento de Especificaciones Técnicas de Calidad de Combustibles Líquidos- a excepción del GLP - Consulta Pública N° 68" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWEo2WkRSdFluSmhjM2MzZEhCaVlXeHBlV2RrZVhKaGJuRnZiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1KcGIyVjBhR0Z1YjJ3Z015NXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJKcGIyVjBhR0Z1YjJ3bE1qQXpMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuOTI1WiIsInB1ciI6ImJsb2Jfa2V5In19--a3f27019ef39be8ed42e50795a55431d0e460156/bioethanol%203.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Modificación al Reglamento de Especificaciones Técnicas de Calidad de Combustibles Líquidos- a excepción del GLP - Consulta Pública N° 68</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 01/11/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Respuesta a las propuestas recibidas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_81" href="/processes/estrategia-ciberseguridad">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública de la Estrategia Nacional de Ciberseguridad" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZakZsWm10d04yWmtNMmR1YVhVMmRYWTVhMk4yZUdrNE1uRmtOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1admJtUnZYMk52Ym5OMWJIUmhMbEJPUnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblptOXVaRzlmWTI5dWMzVnNkR0V1VUU1SEJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSU9hVzFoWjJVdmNHNW5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjkzNloiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3f3e72c97db7420bf54e297f55df08d4c726e207/fondo_consulta.PNG" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública de la Estrategia Nacional de Ciberseguridad</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 23/09/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Cierre del documento para su aprobación 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_79" href="/processes/modificacion-resolucion-aditivos-alimentos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública del Proyecto de Resolución GMC Nº 03/24 “Modificación de las Resoluciones GMC Nº 09/06 y 63/18 sobre Aditivos Alimentarios”." src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiR2RvTlhkNWMzbDFiV2QwZG5oM01uRjZjV3RoT1RCNGVXNDJPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xbFlYUXROelEwT1RFek1WOHhNamd3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25iV1ZoZEMwM05EUTVNVE14WHpFeU9EQXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuOTQ1WiIsInB1ciI6ImJsb2Jfa2V5In19--aac38833421c1516d080f6a412c624f6169e198c/meat-7449131_1280.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública del Proyecto de Resolución GMC Nº 03/24 “Modificación de las Resoluciones GMC Nº 09/06 y 63/18 sobre Aditivos Alimentarios”.</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 12/10/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_73" href="/processes/Consulta67">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Nueva propuesta de calificaciones mínimas de idoneidad que deben tener los instaladores eléctricos que realicen instalaciones interiores  - Consulta Pública N° 67" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlR04zWldZNWFtRnRjRzkzYjJ0aGFHMDRNblI2Y3pOeE5tNXVhUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdWMzUmhiR0ZrYjNJZ1pXeGxZM1J5YVdOdklESXVhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkcGJuTjBZV3hoWkc5eUpUSXdaV3hsWTNSeWFXTnZKVEl3TWk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy45NTRaIiwicHVyIjoiYmxvYl9rZXkifX0=--518e00a2357f33dd01533a19330935daef5304c7/instalador%20electrico%202.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Nueva propuesta de calificaciones mínimas de idoneidad que deben tener los instaladores eléctricos que realicen instalaciones interiores  - Consulta Pública N° 67</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 23/09/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Respuesta a las Propuestas recibidas - Pronunciamiento final 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_72" href="/processes/manifiesto-riosantalucia">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Puesta de Manifiesto del Programa Nacional de Ordenamiento Territorial y Desarrollo Sostenible de la Cuenca del río Santa Lucía" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPV1oyWlc1b2JUWnVaSEp0WkhSeU9IQnZNV3d5YURka2J6UmhOUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVm1sdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxOaGJuUmhJRXgxWTJsaElERXVhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkVFlXNTBZU1V5TUV4MVl5VkRNeVZCUkdFbE1qQXhMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzMuOTYyWiIsInB1ciI6ImJsb2Jfa2V5In19--174441a05c94ffea7b01460771d74445b14aee23/Santa%20Luc%C3%ADa%201.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Puesta de Manifiesto del Programa Nacional de Ordenamiento Territorial y Desarrollo Sostenible de la Cuenca del río Santa Lucía</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 23/08/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Incorporación de aportes e inicio del proceso de aprobación
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_71" href="/processes/Consulta66">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Modificaciones a los Anexos II y III del Reglamento de seguridad de gasodomésticos recipientes portátiles y sus accesorios para GLP y gas natural" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaSGxpTVhkaWJERm9NekJ1ZFhkaU0yeG5kbmw0WWpKM09USmpaQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1admRHOGdZMjl1YzNWc2RHRWdOall1YW5Cbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZG1iM1J2SlRJd1kyOXVjM1ZzZEdFbE1qQTJOaTVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjMzLjk3MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b24910c05127a930d6060ea56a368c6f242a08dd/foto%20consulta%2066.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Modificaciones a los Anexos II y III del Reglamento de seguridad de gasodomésticos recipientes portátiles y sus accesorios para GLP y gas natural</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 27/09/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Respuesta a las Contribuciones recibidas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_65" href="/processes/rtm-materiales-envases-celulosa">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública sobre modificación del &amp;quot;Reglamento Técnico MERCOSUR sobre Materiales, Envases y Equipamientos Celulósicos destinados a estar en Contacto con Alimentos&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNemR0Tm0xa2VXcHNkSEZ4Y0doalozaHVkR053TTNoamNtUjZaQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWRKcGJteHBibVU3SUdacGJHVnVZVzFsUFNKbFkyOHRabkpwWlc1a2JIa3RjM1I1YkdsemFDMWthWE53YjNOaFlteGxMV052Ym5abGJtbGxiblF0WW1WaGRYUnBablZzTFhKbFkzbGpiR0ZpYkdVdGRHRmliR1YzWVhKbElDVXlPREVsTWprdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRsWTI4dFpuSnBaVzVrYkhrdGMzUjViR2x6YUMxa2FYTndiM05oWW14bExXTnZiblpsYm1sbGJuUXRZbVZoZFhScFpuVnNMWEpsWTNsamJHRmliR1V0ZEdGaWJHVjNZWEpsSlRJd0pUSTRNU1V5T1M1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy45ODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--ee1c970964f8da67fdfd4a63ce22af0a8d4418ea/eco-friendly-stylish-disposable-convenient-beautiful-recyclable-tableware%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública sobre modificación del &quot;Reglamento Técnico MERCOSUR sobre Materiales, Envases y Equipamientos Celulósicos destinados a estar en Contacto con Alimentos&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 21/09/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_64" href="/processes/rtm-celulosa-alimentos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública sobre &amp;quot;Reglamento Técnico MERCOSUR para Películas de Celulosa Regenerada Destinadas a Entrar en Contacto con Alimentos&amp;quot; (Derogación de la Resolución GMC N° 55/97)" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaM000TW1JM2EySjVOR1Z0TmpOcGVtOTBOR0ZvZW1ZMU9ESTJPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF6WVhKaGFDMWphR0ZwTFRjeU5qSTBOelVnSlRJNE1TVXlPUzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkozQmxlR1ZzY3kxellYSmhhQzFqYUdGcExUY3lOakkwTnpVbE1qQWxNamd4SlRJNUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozMy45OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--86c5b0aa1f2487d277f71c351dd49dc1d569732b/pexels-sarah-chai-7262475%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública sobre &quot;Reglamento Técnico MERCOSUR para Películas de Celulosa Regenerada Destinadas a Entrar en Contacto con Alimentos&quot; (Derogación de la Resolución GMC N° 55/97)</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 21/09/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_67" href="/processes/encuesta-datos-abiertos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Encuesta sobre el uso del Catálogo Nacional de Datos Abiertos" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNbVptZG5JNGNYVmhaMnBoYUhKMGVXSTNiMnc0ZUc1M2NITnZaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtsdFp5MXViM1JoTFdOdmJYVnVhV1JoWkMxa1lYUnZjeTFoWW1sbGNuUnZjeTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkowbHRaeTF1YjNSaExXTnZiWFZ1YVdSaFpDMWtZWFJ2Y3kxaFltbGxjblJ2Y3k1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4wMDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--3b7bee053455e9c2f1e3d7aaa0af148cfb4787d1/Img-nota-comunidad-datos-abiertos.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Encuesta sobre el uso del Catálogo Nacional de Datos Abiertos</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/09/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Publicación de resultados 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_77" href="/processes/tercera-cdn">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Elaboración de la Tercera Contribución Determinada a nivel Nacional sobre Cambio Climático" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjV2d4YkRkMmNHOXJjRFpvYW5sbWVUQjFaM2R4WkROcWF6VnNiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFek1qWjRORGszTFd4cGJYQnBieTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkp6RXpNalo0TkRrM0xXeHBiWEJwYnk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4wMTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--bc113a8c084043097c4b0344a58f5245e116c1ed/1326x497-limpio.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Elaboración de la Tercera Contribución Determinada a nivel Nacional sobre Cambio Climático</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 28/02/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Difusión de CDN final
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_63" href="/processes/consulta-datos-abiertos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública sobre recomendaciones técnicas para datos abiertos" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbkZoYTJrMGVHZ3dOWHBrZVhObE5XMTBlbWQyTm5FMWEzY3lkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpNNE5EQXRNemcwTUMxdFlYaGZkakl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5Y3pPRFF3TFRNNE5EQXRiV0Y0WDNZeUxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4wMTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--20630d8ba973aaaaaa1495e07ea90423c616ac0e/3840-3840-max_v2.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública sobre recomendaciones técnicas para datos abiertos</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 17/06/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Publicación de documentos finales y devolución a propuestas realizadas
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_60" href="/processes/Consulta65">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Anteproyecto de Reglamento de Suministro de Información Contable con Fines Regulatorios del Sector Importación, Refinación y Actividades Primarias de Transporte, Almacenamiento de Petróleo y Combustibles Derivados " src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkV05vZFc5bFpUTXliV1poT1cxd05IRmhiMjl1T1dZM01YUnZjQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1OdmJuUmhZbWxzYVdSaFpDQnlaV2QxYkdGMGIzSnBZUzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyTnZiblJoWW1sc2FXUmhaQ1V5TUhKbFozVnNZWFJ2Y21saExtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4wMzFaIiwicHVyIjoiYmxvYl9rZXkifX0=--6cbcef4f84dcfdeda85f65f7ca69a97fa5fbda3a/contabilidad%20regulatoria.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Anteproyecto de Reglamento de Suministro de Información Contable con Fines Regulatorios del Sector Importación, Refinación y Actividades Primarias de Transporte, Almacenamiento de Petróleo y Combustibles Derivados </h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 05/08/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Respuesta a las Contribuciones recibidas - Pronunciamiento final 
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_50" href="/processes/adaptacion-cambio-climatico-energia">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública del Plan Nacional de Adaptación al Cambio Climático - Sector Energía (NAP-E)" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPR1pqZVRkdmREbG5kakp1ZDJWM00zQjZhVzl6Tm1GMGFUUTJid1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCaGJHMWhjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoxQmhiRzFoY2k1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4wNDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--de55f114aae601763f95f178c93817391168d3ba/Palmar.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública del Plan Nacional de Adaptación al Cambio Climático - Sector Energía (NAP-E)</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 25/05/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Cierre de la consulta
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_47" href="/processes/materiales-alimentos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios:  Consulta Pública sobre Reglamento Técnico MERCOSUR sobre aditivos para la elaboración de materiales plásticos y revestimientos poliméricos en contacto con alimentos" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhObmRtZURObU4yWnNjelZuZGpSMVpXdDNkWHBqYldkcGFEZHNOQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFoYm01aExYTm9kbVYwY3kwek5qUTFOVEEwTG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR1Y0Wld4ekxXRnVibUV0YzJoMlpYUnpMVE0yTkRVMU1EUXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMDUwWiIsInB1ciI6ImJsb2Jfa2V5In19--acec622f93d04069157d18d441a0241256a8d174/pexels-anna-shvets-3645504.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary"> Consulta Pública sobre Reglamento Técnico MERCOSUR sobre aditivos para la elaboración de materiales plásticos y revestimientos poliméricos en contacto con alimentos</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 29/08/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_49" href="/processes/plasticos-alimentarios">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública sobre Reglamento Técnico MERCOSUR sobre monómeros, otras sustancias de partida y polímeros para la elaboración de envases y equipamientos plásticos en contacto con alimentos" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkbnBwTm5wbk9IRXplSE5rZFdadmNuazVNMk56WkRZMVlXOTFPQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVo1cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10Ym1GMFlXeHBlV0V0ZG1GcGRHdGxkbWxqYUMwMU56azBOemd3TFcxcGJpQWxNamd4SlRJNUlDVXlPREVsTWprdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRibUYwWVd4cGVXRXRkbUZwZEd0bGRtbGphQzAxTnprME56Z3dMVzFwYmlVeU1DVXlPREVsTWprbE1qQWxNamd4SlRJNUxtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4wNjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--a97cdf91301021b9ce56038fb5d5030847abbeb5/pexels-nataliya-vaitkevich-5794780-min%20(1)%20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública sobre Reglamento Técnico MERCOSUR sobre monómeros, otras sustancias de partida y polímeros para la elaboración de envases y equipamientos plásticos en contacto con alimentos</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 22/11/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_48" href="/processes/aditivos-alimentarios">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios:  Consulta Pública sobre modificación de Resoluciones del MERCOSUR relativas a aditivos alimentarios" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkVE40YmpCeGJIbDNialEwY205c1ltczVlSGx1T0RrMmQzaGpZZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFoY0hKcGJDMXRhWGxoYTI4dE9ERTVNVEl6TUM1cWNHY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM0JsZUdWc2N5MWhjSEpwYkMxdGFYbGhhMjh0T0RFNU1USXpNQzVxY0djR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkRvUmMyVnlkbWxqWlY5dVlXMWxPZ3BzYjJOaGJBPT0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjA3M1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d4832969e58ac31704e4710f354a119483658cf4/pexels-april-miyako-8191230.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary"> Consulta Pública sobre modificación de Resoluciones del MERCOSUR relativas a aditivos alimentarios</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 29/08/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_46" href="/processes/rtm-vehiculos-hidrogeno">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública sobre &amp;quot;Reglamento Técnico MERCOSUR sobre Vehículos a Hidrógeno y Celdas de Combustible”" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkRE0zYjNveE5IWnBNREZwZEdKa2NYRXlhblJsTVRFek1uRnlOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKd1pYaGxiSE10ZVdGeWIzTnNZWFl0YzJoMWNtRmxkaTB4T0RNME5EQXpYMFZoYzNrdFVtVnphWHBsTG1OdmJTNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjNCbGVHVnNjeTE1WVhKdmMyeGhkaTF6YUhWeVlXVjJMVEU0TXpRME1ETmZSV0Z6ZVMxU1pYTnBlbVV1WTI5dExtcHdad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4wODNaIiwicHVyIjoiYmxvYl9rZXkifX0=--09cd80a65a406e87f12115ec69cd719e12e24224/pexels-yaroslav-shuraev-1834403_Easy-Resize.com.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública sobre &quot;Reglamento Técnico MERCOSUR sobre Vehículos a Hidrógeno y Celdas de Combustible”</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 29/08/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_42" href="/processes/servicios-consultoria">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública sobre pliego modelo: contratación de servicios de consultoría" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaWFJpZFRSamVEWXhkM1JrWVRVeVlqbHBkbkJwY0haNmVtTnFaZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFdElFTnBZbVZ5YzJWbmRYSnBaR0ZrTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25NUzBsTWpCRGFXSmxjbk5sWjNWeWFXUmhaQzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMDk0WiIsInB1ciI6ImJsb2Jfa2V5In19--8f18bbdbe0357fc1590f3c28d19522d486c8b26b/1-%20Ciberseguridad.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública sobre pliego modelo: contratación de servicios de consultoría</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 03/06/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Informe final
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_40" href="/processes/frutas-hortalizas-huevos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública sobre pliego modelo: adquisición de frutas, hortalizas y huevos " src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV2xpWmpodE9XbzBObTg0T1RCdVlYVnhabmRrZVhoMmQzQnhad1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZm1sdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtOdmJuTjFiSFJoSUhCMVlteHBZMkVnVUd4cFpXZHZjeUFsTWpnekpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblEyOXVjM1ZzZEdFbE1qQndKVU16SlVKQllteHBZMkVsTWpCUWJHbGxaMjl6SlRJd0pUSTRNeVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjEyMFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--34fce4106c4698411bbd863c149c60c78e9a8f6b/Consulta%20p%C3%BAblica%20Pliegos%20(3).png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública sobre pliego modelo: adquisición de frutas, hortalizas y huevos </h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 03/06/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Informe final
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_35" href="/processes/regulacion-registro-software">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública sobre el Decreto Reglamentario del Registro de Software" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhabWhoTkdjNWRtazBhVFV6YzJOdGVHOXJkbmgxYjJkbVpITjBjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpWDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTFoYkdWNExXWjFMVEV4T0RnM05URXVhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0Snlkd1pYaGxiSE10WVd4bGVDMW1kUzB4TVRnNE56VXhMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMTMyWiIsInB1ciI6ImJsb2Jfa2V5In19--2968bf16b512f879c387cb93e79aabcd9099b56c/pexels-alex-fu-1188751.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública sobre el Decreto Reglamentario del Registro de Software</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 29/02/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 2: Análisis de los aportes recibidos
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_33" href="/processes/rtm-grupos-motopropulsores-vehiculos-electricos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta Pública sobre  &amp;quot;Reglamento Técnico MERCOSUR sobre Grupos Motopropulsores de Vehículos Eléctricos&amp;quot;" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNekF6YlhWcmFtbHBjR1ZuT0hkek1uaDZibm94TkRjNWJuSmpaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpZldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CbGVHVnNjeTF0YVd0bExXSnBjbVF0TVRFd09EUTBMVzFwYmkweU1DVXlPREVsTWprdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWR3WlhobGJITXRiV2xyWlMxaWFYSmtMVEV4TURnME5DMXRhVzR0TWpBbE1qZ3hKVEk1TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjE0NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--b1b3ef5aa703220d50e401560b56fcfbebae7bdf/pexels-mike-bird-110844-min-20(1).jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta Pública sobre  &quot;Reglamento Técnico MERCOSUR sobre Grupos Motopropulsores de Vehículos Eléctricos&quot;</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 31/07/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Evaluación en el ámbito del SGT Nº 3
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_23" href="/processes/manifiesto-rionegro">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Puesta de Manifiesto del Programa Nacional de Ordenamiento Territorial y Desarrollo Sostenible de la Cuenca del Río Negro" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhSEZvYURocmRtMXVNVEJpTUdJeWFERmllR3BrYUd4MWFHOW1kQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpT1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5KcGJ5NXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjNKcGJ5NXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMTU1WiIsInB1ciI6ImJsb2Jfa2V5In19--f349be7e5c89fc91c6137a5af10473f235be5cde/rio.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Puesta de Manifiesto del Programa Nacional de Ordenamiento Territorial y Desarrollo Sostenible de la Cuenca del Río Negro</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/03/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Incorporación de aportes e inicio del proceso de aprobación
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_14" href="/processes/datos-compras">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública: información de datos de compras públicas" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaRGMwYWpNeWEybG9ablJ1TVRJMmVtOXNhRzFvWTJZMU9Xb3hNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpYjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtOUUlGQnlaWE1nVUhKdlkyVnpieUJFWVhSdmN5QkJVa05GTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25RMUFsTWpCUWNtVnpKVEl3VUhKdlkyVnpieVV5TUVSaGRHOXpKVEl3UVZKRFJTNXdibWNHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNteHZZMkZzIiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4xNjRaIiwicHVyIjoiYmxvYl9rZXkifX0=--5a0d00bb6791cad55d39d529f01076cdbc0a367d/CP%20Pres%20Proceso%20Datos%20ARCE.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública: información de datos de compras públicas</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 10/10/2023
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Etapa 3: Devolución a los comentarios y aportes
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_15" href="/processes/estrategia-ia-datos">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Proceso de revisión Estrategia de Inteligencia Artificial y creación de la Estrategia Nacional de Datos" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNV00zTkdSbWJYYzBObVozY0ROaGVIcGhkMk14TVRWbE5HbHpjUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1WemRISmhkR1ZuYVdFZ2FXRWdNUzV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyVnpkSEpoZEdWbmFXRWxNakJwWVNVeU1ERXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMTc0WiIsInB1ciI6ImJsb2Jfa2V5In19--c900a40db0538ef069dede78d47441b2dec83c6f/estrategia%20ia%201.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Proceso de revisión Estrategia de Inteligencia Artificial y creación de la Estrategia Nacional de Datos</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/10/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 5 - Aprobación y publicación de las Estrategias
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_11" href="/processes/revision-estrategia">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Revisión de la Estrategia de Ciudadanía Digital" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOWFZ6TlhsdE5YZGhiSE53YTJSbGJqUndaR3htTTNVemFuSnBlZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpU1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWxCdmNuUmhaR0VnZGpFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRRYjNKMFlXUmhKVEl3ZGpFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4xODNaIiwicHVyIjoiYmxvYl9rZXkifX0=--3c70e2008081ebfc2f16fb2ae8d63dba096aa4c6/Portada%20v1.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Revisión de la Estrategia de Ciudadanía Digital</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 31/01/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        6. Publicación del documento final
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_8" href="/processes/norma-radioterapia">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública sobre norma de radioterapia" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNMkp5ZVdNeGNuUnZkMmt4TmpCNE16UnRaM2xzWm0xdWFIY3hhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW0xcFpXMWZjRzl5ZEdGa1lTNXFjR2NpT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjIxcFpXMWZjRzl5ZEdGa1lTNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMTkxWiIsInB1ciI6ImJsb2Jfa2V5In19--bdf3b1c879d8f25d6934f8e000dfd1d6f16a6234/miem_portada.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública sobre norma de radioterapia</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 08/08/2023
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3: Análisis y priorización de propuestas recibidas.
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_4" href="/processes/segunda-cdn">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Elaboración de la Segunda Contribución Determinada a nivel Nacional sobre Cambio Climático" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhjV2d4YkRkMmNHOXJjRFpvYW5sbWVUQjFaM2R4WkROcWF6VnNiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpFek1qWjRORGszTFd4cGJYQnBieTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkp6RXpNalo0TkRrM0xXeHBiWEJwYnk1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAzMS0wOS0wOFQxNTozOTozNC4yMDBaIiwicHVyIjoiYmxvYl9rZXkifX0=--8676171e556bb3e029611abb6dc9c69974c37307/1326x497-limpio.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Elaboración de la Segunda Contribución Determinada a nivel Nacional sobre Cambio Climático</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 31/12/2022
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Difusión de CDN final
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_41" href="/processes/estrategia-economia-circular">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Puesta de manifiesto de la Estrategia Nacional de Economía Circular" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkWHA2Y1hScWNUbHFhbWQ0Tkdwb2RIUTNhalJxWkRkeFlUUTNkZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVFdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtWamIwTnBjbU4xYkdGeUxUTXVhbkJuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkRlkyOURhWEpqZFd4aGNpMHpMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDbXh2WTJGcyIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMjE3WiIsInB1ciI6ImJsb2Jfa2V5In19--0c09cd0bef1594d4c4f4685b4d399ed82742734a/EcoCircular-3.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Puesta de manifiesto de la Estrategia Nacional de Economía Circular</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 11/04/2024
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 5: Aprobación y publicación
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_2" href="/processes/consulta-reglamento-radioaficionados">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: ¿Qué Reglamento del Servicio de Radioaficionados queremos? " src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhVFYyYVRKbGRYZGhiWE51WlRBME5XRmxjWEp3TW5wdVluSndhUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtKaGJtNWxjbDlJYjIxbFgzWXlMbXB3WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjblFtRnVibVZ5WDBodmJXVmZkakl1YW5CbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjIyOFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--6eee910546e247201e0aba4138f72a02e911de2a/Banner_Home_v2.jpg" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">¿Qué Reglamento del Servicio de Radioaficionados queremos? </h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 13/12/2021
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Fase 3- Reglamento final
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_5" href="/processes/quinto-planGA">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Consulta pública: 5to Plan de Acción Nacional de Gobierno Abierto" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhlVEJ0WkhKbVlUTnZkbXc1WTNWdE1YUnJOVEZ3WkdsaGRHVTBkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpV1dsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpWMFlWOXdiR0Z1WDBkQlgyNXZkR2xqYVdFdWNHNW5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWMxZEdGZmNHeGhibDlIUVY5dWIzUnBZMmxoTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjIzOVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--ff4082dcab2fde07bdd28dcd7a1fc97bb3d84ed2/5ta_plan_GA_noticia.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Consulta pública: 5to Plan de Acción Nacional de Gobierno Abierto</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 15/12/2021
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+         4. Aprobación y publicación del 5to Plan
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+<a class="card__grid" id="participatory_process_3" href="/processes/plan-nacional-ddhh">
+  <div class="card__grid-img">
+    
+      <img alt="Imagen para los medios: Plan Nacional de Derechos Humanos" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMlJ3Wmpjd01IWnJibTh6WW1ob05YYzRhVEl5WlhwdWJuZDVNUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CdmNuUmhaR0VnWVc1amFHRWdNUzV3Ym1jaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkozQnZjblJoWkdFbE1qQmhibU5vWVNVeU1ERXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMzEtMDktMDhUMTU6Mzk6MzQuMjUxWiIsInB1ciI6ImJsb2Jfa2V5In19--6288ff8807786e4a0bae1114ae7e890ee167a61d/portada%20ancha%201.png" />
+    
+  </div>
+  <div class="card__grid-text">
+    <h3 class="h4 text-secondary">Plan Nacional de Derechos Humanos</h3>
+    
+
+    
+      <div class="card__grid-metadata">
+        
+  
+    <div>
+      
+      
+        <span class="card__grid-loader" style="--value:0;"></span>Terminado el: 30/04/2025
+      
+    </div>
+  
+
+  
+    <div>
+      <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-direction-line"></use></svg>
+      
+        Etapa 5 - Ejecución - Fase 1
+      
+    </div>
+  
+
+
+      </div>
+    
+  </div>
+</a>
+
+
+</div>
+
+
+
+  </section>
+
+</main></div>
+
+
+
+  </div>
+
+  <footer>
+    <div class="main-footer Footer-body">
+  <div class="main-footer__top">
+    <div class="lg:w-1/3">
+      <div class="Footer-info u-md-pr3">
+  <h3 class="Footer-title">Plataforma de Participación Ciudadana Digital</h3>
+  <address>
+    <p><span>Dirección:</span> Liniers 1324 piso 4</p>
+    <p><span>Teléfono:</span> (+598) 2901 2929</p>
+    <p>
+      <span>Correo electrónico:</span>
+      <a rel="noopener noreferrer" target="_blank" data-external-link="text-only" href="mailto:plataforma.participacion@agesic.gub.uy">plataforma.participacion@agesic.gub.uy</a>
+    </p>
+    <p><span>Horario de atención:</span><br>Lunes a viernes de 9:30 a 17:30 hs.</p>
+  </address>
+  <nav class="Footer-social w-full md:w-auto md:ml-auto" role="navigation" aria-label="Social media">
+    <ul class="flex md:justify-between md:justify-start gap-4 text-sm text-white hover:[&_a]:opacity-50">
+    <li>
+      <a target="_blank" data-external-link="text-only" rel="noopener noreferrer" href="https://twitter.com/agesic">
+        <span class="sr-only">Plataforma de Participación Ciudadana Digital en X</span>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" aria-label="X" class="w-6 h-6 fill-current"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-twitter-x-line"></use></svg>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" data-external-link="text-only" rel="noopener noreferrer" href="https://www.facebook.com/agesic.uy">
+        <span class="sr-only">Plataforma de Participación Ciudadana Digital en Facebook</span>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" aria-label="Facebook" class="w-6 h-6 fill-current"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-facebook-fill"></use></svg>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" data-external-link="text-only" rel="noopener noreferrer" href="https://www.youtube.com/AGESIC">
+        <span class="sr-only">Plataforma de Participación Ciudadana Digital en YouTube</span>
+        <svg width="1em" height="1em" role="img" aria-hidden="true" aria-label="YouTube" class="w-6 h-6 fill-current"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-youtube-line"></use></svg>
+      </a>
+    </li>
+</ul>
+
+  </nav>
+</div>
+    </div>
+    <div class="lg:w-2/3">
+      <div class="grid grid-cols-1 gap-x-4 gap-y-10 lg:grid-cols-4 text-md text-white">
+        
+<nav class="Footer-list" role="navigation" aria-label="Participá">
+  <h2 class="h4 mb-4">Participá</h2>
+  <ul class="space-y-4 break-inside-avoid">
+      <li class="">
+        <a href="/">Inicio</a>
+      </li>
+      <li class="">
+        <a href="/processes">Procesos</a>
+      </li>
+      <li class="">
+        <a href="/assemblies">Ámbitos Participativos</a>
+      </li>
+  </ul>
+</nav>
+
+<nav class="Footer-list" role="navigation" aria-label="Mi cuenta">
+  <h2 class="h4 mb-4">Mi cuenta</h2>
+  <ul class="space-y-4 break-inside-avoid">
+      <li class=""><a href="/users/sign_in">Ingresar a la plataforma</a></li>
+  </ul>
+</nav>
+
+<nav class="Footer-list" role="navigation" aria-label="Ayuda">
+  <h2 class="h4 mb-4">Ayuda</h2>
+  <ul class="space-y-4 break-inside-avoid">
+    
+      <li class="">
+        <a href="/pages/faq">Preguntas frecuentes</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+<nav class="Footer-list" role="navigation" aria-label="Recursos">
+  <h2 class="h4 mb-4">Enlaces</h2>
+  <ul class="space-y-4 break-inside-avoid">
+    <li class=""><a href="/last_activities">Actividad</a></li>
+      <li class=""><a href="/meetings/">Encuentros</a></li>
+    <li class=""><a href="/open-data/download">Descargar ficheros de datos abiertos</a></li>
+  </ul>
+</nav>
+
+
+
+      </div>
+      <div class="Footer-logos">
+          <a class="block" href="www.gub.uy/agesic">
+            <img alt="Agesic" src="https://plataformaparticipacionciudadana.gub.uy/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZMmswTUcxdGMzTm1OMnhvZUdNM05XVnpaWGc1Y21OcGRHaDFkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1sdFlXZGxiaUFsTWpneUpUSTVMbkJ1WnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFXMWhaMlZ1SlRJd0pUSTRNaVV5T1M1d2JtY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzVwYldGblpTOXdibWNHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q214dlkyRnMiLCJleHAiOiIyMDMxLTA5LTA4VDE1OjM5OjM0LjM1N1oiLCJwdXIiOiJibG9iX2tleSJ9fQ==--3312866633cb36453306098bdd51ed8c125a0a82/imagen%20(2).png" />
+</a>      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="mini-footer">
+  <div class="mini-footer__content">
+    <div>
+      <a class="Brand-text" rel="decidim noopener noreferrer" href="https://www.gub.uy" target="_blank" data-external-link="text-only">
+        gub.uy
+      </a>
+    </div>
+    <div class="Footer-links flex justify-end">
+      <ul class="flex gap-6 items-center">
+      <li>Sitio oficial de la República Oriental del Uruguay</li>
+      <li>
+        <a href="#" data-dialog-open="dc-modal">Configuración de cookies</a>
+      </li>
+      <li>Web creada con <a target="_blank" href="https://github.com/decidim/decidim">software libre</a>.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  </footer>
+</div>
+
+    
+    <div id="confirm-modal" data-dialog="confirm-modal"><div id="confirm-modal-content"><button type="button" data-dialog-close="confirm-modal" data-dialog-closable="" aria-label="Cerrar el modal">&times</button>
+  <div data-dialog-container>
+    <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-delete-bin-line"></use></svg>
+    <h2 class="h2" data-dialog-title id="dialog-title-confirm-modal">Confirmar</h2>
+
+    <div data-confirm-modal-content></div>
+  </div>
+
+  <div data-dialog-actions>
+    <button class="button button__lg button__transparent-secondary" data-confirm-cancel data-dialog-close="confirm-modal">
+      <span>Cancelar</span>
+    </button>
+    <button class="button button__lg button__secondary" data-confirm-ok>
+      <span>De acuerdo</span>
+    </button>
+  </div>
+</div></div>
+    <div id="loginModal" data-dialog="loginModal"><div id="loginModal-content" class="login__modal"><button type="button" data-dialog-close="loginModal" data-dialog-closable="" aria-label="Cerrar el modal">&times</button>
+
+
+  <form data-abide="true" data-live-validate="true" data-validate-on-blur="true" id="login_new_user" novalidate="novalidate" action="/users/sign_in" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="-VjXdJ8GPmfIe-MwkO57eqbvIor2Xgt3qPcxlFJy7546vweplS-jL4DaexgHuPnJlGiDpp6Ln9CoGRDkO6dItA" autocomplete="off" />
+    <div data-dialog-container>
+      <svg width="1em" height="1em" role="img" aria-hidden="true" class="w-6 h-6 text-gray fill-current"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-user-line"></use></svg>
+      <h3 id="dialog-title-loginModal" class="h3">Por favor, inicia la sesión</h3>
+      <div>
+          
+
+              <div class="login__omniauth login__omniauth__horizontal">
+      <a aria-label="Ingresar a la Plataforma" class="login__omniauth-button button--gub.uy" href="/users/sign_in">
+        <span>Ingresar a la Plataforma</span>
+</a>  </div>
+
+      </div>
+    </div>
+
+</form></div></div>
+    <div id="authorizationModal" data-dialog="authorizationModal"><div id="authorizationModal-content" class="authorization-modal"><button type="button" data-dialog-close="authorizationModal" data-dialog-closable="" aria-label="Cerrar el modal">&times</button><svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-loader-3-line"></use></svg></div></div>
+
+    <div id="socialShare" data-dialog="socialShare"><div id="socialShare-content" class="share-modal"><button type="button" data-dialog-close="socialShare" data-dialog-closable="" aria-label="Cerrar el modal">&times</button>
+<div data-dialog-container>
+  <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-share-line"></use></svg>
+  <h2 id="dialog-title-socialShare" tabindex="-1" data-dialog-title>Compartir</h2>
+  <div>
+    <div class="share-modal__list" data-social-share=""><a rel="nofollow noopener noreferrer" target="_blank" data-site="x" data-external-link="text-only" data-external-domain-link="false" title="Compartir en X" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fplataformaparticipacionciudadana.gub.uy%2Fprocesses%3Ffilter%5Bwith_date%5D%3Dall%26per_page%3D100&amp;text=Procesos+participativos+-+Plataforma+de+Participaci%C3%B3n+Ciudadana+Digital&amp;via=agesic"><svg width="1em" height="1em" role="img" aria-hidden="true" style="color: #000000;"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-twitter-x-line"></use></svg><span>X</span></a><a rel="nofollow noopener noreferrer" target="_blank" data-site="facebook" data-external-link="text-only" data-external-domain-link="false" title="Compartir en Facebook" href="http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fplataformaparticipacionciudadana.gub.uy%2Fprocesses%3Ffilter%5Bwith_date%5D%3Dall%26per_page%3D100"><svg width="1em" height="1em" role="img" aria-hidden="true" style="color: #1877f2;"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-facebook-circle-line"></use></svg><span>Facebook</span></a><a rel="nofollow noopener noreferrer" target="_blank" data-site="whatsapp" data-external-link="text-only" data-external-domain-link="false" title="Compartir en WhatsApp" href="https://api.whatsapp.com/send?text=Procesos+participativos+-+Plataforma+de+Participaci%C3%B3n+Ciudadana+Digital%0Ahttps%3A%2F%2Fplataformaparticipacionciudadana.gub.uy%2Fprocesses%3Ffilter%5Bwith_date%5D%3Dall%26per_page%3D100"><svg width="1em" height="1em" role="img" aria-hidden="true" style="color: #25d366;"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-whatsapp-line"></use></svg><span>WhatsApp</span></a><a rel="nofollow noopener noreferrer" target="_blank" data-site="telegram" data-external-link="text-only" data-external-domain-link="false" title="Compartir en Telegram" href="https://telegram.me/share/url?text=Procesos+participativos+-+Plataforma+de+Participaci%C3%B3n+Ciudadana+Digital&amp;url=https%3A%2F%2Fplataformaparticipacionciudadana.gub.uy%2Fprocesses%3Ffilter%5Bwith_date%5D%3Dall%26per_page%3D100"><svg width="1em" height="1em" role="img" aria-hidden="true" style="color: #0088cc;"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-telegram-line"></use></svg><span>Telegram</span></a></div>
+
+    <div class="share-modal__input">
+      <input id="urlShareLink" type="text" title="Compartir enlace" value="https://plataformaparticipacionciudadana.gub.uy/processes?filter[with_date]=all&amp;per_page=100" readonly>
+      <button type="button"
+        class="button button__sm button__text-secondary"
+        data-clipboard-copy="#urlShareLink"
+        data-clipboard-copy-label="¡Copiado!"
+        data-clipboard-copy-message="Se ha copiado el enlace al portapapeles correctamente."
+        title="Copiar al portapapeles el enlace para compartir">
+        <span>Copia</span>
+        <svg width="1em" height="1em" role="img" aria-hidden="true"><use href="/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg#ri-file-copy-line"></use></svg>
+      </button>
+    </div>
+  </div>
+</div>
+</div></div>
+    
+  <script src="/decidim-packs/js/decidim_participatory_processes-f0274d852313ca3330df.js" defer="defer"></script>
+<script src="/decidim-packs/js/decidim_core-647c6bfb618f4e3fad3d.js"></script>
+<script src="/decidim-packs/js/decidim_sw-51f96a6abad0e97242d9.js"></script>
+
+
+<script>
+  Decidim.config.set({"api_path":"/api/","icons_path":"/decidim-packs/media/images/remixicon.symbol-e643e553623ffcd49f94.svg","messages":{"selfxssWarning":{"description":"Esta función de navegador está pensada para desarrolladores y no deberías pegar nada aquí si se te ha pedido que lo hagas. Pegar contenido en esta ventana puede comprometer tu privacidad y dar acceso a hackers a tu cuenta.","title":"Detener!"},"mentionsModal":{"removeRecipient":"Eliminar destinataria %name%"},"emojis":{"addCustom":"Agregar emoji personalizado","button":"Añadir emoji","categories":{"activity":"Actividad","custom":"Personalizado","flags":"Banderas","foods":"Comida y bebida","frequent":"Usados frecuentemente","nature":"Animales y naturaleza","objects":"Objetos","people":"Caras y personas","places":"Viajes y lugares","search":"Resultados de búsqueda","symbols":"Símbolos"},"pick":"Elige un emoji…","search":"Buscar","searchNoResults1":"¡Oh no!","searchNoResults2":"No se pudo encontrar ese emoji","skins":{"1":"Por defecto","2":"Claro","3":"Medio claro","4":"Medio","5":"Medio oscuro","6":"Oscuro","choose":"Elige un tono de piel predeterminado"}},"editor":{"extensions":{"image":{"altLabel":"Texto alternativo para la imagen","nodeView":{"resizer":{"control":{"resize":"Redimensiona la imagen (%position%)"},"position":{"bottomLeft":"esquina inferior izquierda","bottomRight":"esquina inferior derecha","topLeft":"esquina superior izquierda","topRight":"esquina superior derecha"}}},"uploadError":"No se ha podido subir el archivo."},"link":{"bubbleMenu":{"edit":"Editar","remove":"Borrar","url":"URL"},"hrefLabel":"URL del enlace","targetLabel":"Insertar enlace","targets":{"blank":"Nueva pestaña","default":"Por defecto (en la misma pestaña)"}},"videoEmbed":{"titleLabel":"Título","urlLabel":"URL del vídeo"}},"inputDialog":{"buttons":{"cancel":"Cancelar","remove":"Borrar","save":"Guardar"},"close":"Cerrar la ventana"},"toolbar":{"control":{"blockquote":"Cita","bold":"Negrita","bulletList":"Lista en viñetas","codeBlock":"Bloque de código","common":{"eraseStyles":"Borrar estilos"},"hardBreak":"Salto de línea","heading":"Estilo de texto","image":"Imagen","indent":{"indent":"Aumentar la sangría","outdent":"Reducir la sangría"},"italic":"Cursiva","link":"Enlace","orderedList":"Lista numerada","underline":"Subrayado","videoEmbed":"Incrustar vídeo"},"textStyle":{"heading":"Encabezado %level%","normal":"Normal"}},"upload":{"uploadedFile":"Archivo subido"}},"date":{"day_names":["domingo","lunes","martes","miércoles","jueves","viernes","sábado"],"abbr_day_names":["dom","lun","mar","mié","jue","vie","sáb"],"month_names":[null,"enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],"abbr_month_names":[null,"ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],"formats":{"default":"%-d/%-m/%Y","long":"%-d de %B de %Y","short":"%-d de %b","decidim_short":"%d/%m/%Y","decidim_short_dashed":"%d-%m-%Y","decidim_short_with_month_name_short":"%d %b %Y","decidim_with_day_and_month_name":"%A %d %b %Y","decidim_with_month_name":"%d %B %Y","decidim_with_month_name_short":"%d %b","help":{"date_format":"Formato: dd/mm/aaaa"},"order":"d-m-a","separator":"/"},"order":["day","month","year"],"buttons":{"close":"Cerrar","select":"Seleccionar"}},"time":{"am":"am","formats":{"default":"%a, %d %b %Y %H:%M:%S %z","long":"%B %d, %Y %H:%M","short":"%d/%m/%Y %H:%M","devise":{"mailer":{"invitation_instructions":{"accept_until_format":"%B %d, %Y %I:%M %p"}}},"day_of_month":"%b %d","day_of_week":"%a","day_of_week_long":"%a %e","day_of_year":"%d/%m/%y","ddmm":"%d.%m","ddmmyyyy":"%d.%m.%Y","decidim_day_of_year":"%d %B %Y","decidim_short":"%d/%m/%Y %H:%M","help":{"time_format":"Formato: hh:mm"},"long_dashed":"%d-%m-%Y %H:%M:%S","long_with_particles":"%d de %B del %Y a las %Hh%M","time_of_day":"%H:%M","tooltip":"%d-%m-%Y %H:%M %p %Z (GMT %:z)"},"pm":"pm","buttons":{"close":"Cerrar","reset":"Reiniciar","select":"Seleccionar"}}},"notifications":{"action_error":"Se ha producido un error al actualizar las notificaciones."},"external_domain_allowlist":["plataformaparticipacionciudadana.gub.uy","decidim.org","github.com"],"consent_cookie_name":"decidim-consent","sign_out_path":"/users/sign_out"});
+  Decidim.InputCharacterCounter.configureMessages({"charactersAtLeast":{"one":"Al menos %count% carácter","other":"Al menos %count% caracteres"},"charactersLeft":{"one":"Queda %count% carácter","other":"Quedan %count% caracteres"}});
+  Decidim.ExternalLink.configureMessages({"externalLink":"Enlace externo","opensInNewTab":"Abrir en una pestaña nueva"});
+  Decidim.FormValidator.configureMessages({"correctErrors":"Hay errores en el formulario, por favor corrígelos para continuar."});
+</script>
+
+
+
+
+
+
+
+
+    <div hidden data-dataconsent-warning class="hide">
+  <p>
+  Necesitas habilitar todas las cookies para ver este contenido.
+  </p>
+  <a href="#" class="button" data-dialog-open="dc-modal">
+    Cambiar la configuración de cookies
+  </a>
+</div>
+
+
+  </body>
+</html>
