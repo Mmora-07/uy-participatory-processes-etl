@@ -22,7 +22,7 @@ Correr los tests (no requieren red, usan fixtures locales):
 pytest tests/ -v
 ```
 
-**Extras opcionales** (no forman parte del comando de referencia): cada corrida de `main.py` termina logueando un resumen de `null` por campo; `python validar_output.py` re-corre esos mismos checks sobre un `output.json` ya generado (≥30 procesos, slugs únicos, formato de fecha, sin strings vacíos donde debía haber `null`), sin red.
+**Extras opcionales** (no forman parte del comando de referencia): cada corrida de `main.py` termina logueando un resumen de `null` por campo. `python validar_output.py [ruta.json]` valida un `output.json` ya generado y loguea cada chequeo por separado: estructura/tipos de los 7 campos (vía el modelo `Proceso`), ≥30 procesos, slugs únicos, sin strings vacíos donde el contrato pide `null` (ni en los campos que nunca deberían estarlo), fechas en `YYYY-MM-DD`, URLs con forma válida. No hace requests de red — valida la *forma* de las URLs, no que respondan 200 (detalle completo en `documentation.md`, Fase 5.3).
 
 ## Decisiones y supuestos
 
