@@ -22,6 +22,8 @@ Correr los tests (no requieren red, usan fixtures locales):
 pytest tests/ -v
 ```
 
+**Extras opcionales** (no forman parte del comando de referencia): cada corrida de `main.py` termina logueando un resumen de `null` por campo; `python validar_output.py` re-corre esos mismos checks sobre un `output.json` ya generado (≥30 procesos, slugs únicos, formato de fecha, sin strings vacíos donde debía haber `null`), sin red.
+
 ## Decisiones y supuestos
 
 Esta sección resume las decisiones de mapeo más relevantes. El detalle completo — con los conteos exactos sobre las 86 fichas reales que sustentan cada una — está en [documentation.md](documentation.md).
@@ -41,7 +43,8 @@ config.py              Constantes: URLs, selectores CSS, timeouts, límites, eti
 crawler.py             Listado paginado, extracción de slugs, build_proceso() por slug.
 parser.py               Extracción de campos desde HTML de una ficha. Sin I/O de red.
 models.py                Proceso / Componente (pydantic) + serialización a dict/JSON.
-output.py                 Escritura del JSON final.
+output.py                 Escritura del JSON final + resumen de nulos por campo.
+validar_output.py           Script opcional: valida un output.json ya generado.
 utils/http_client.py       Sesión HTTP, reintentos con backoff exponencial, delay entre requests.
 utils/dates.py               Parseo de fechas es-UY (diccionario manual de meses).
 utils/text.py                 Extracción/normalización de texto (separador entre nodos) y truncado de nombre_corto.

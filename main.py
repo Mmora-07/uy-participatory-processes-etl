@@ -10,7 +10,7 @@ from pathlib import Path
 
 from config import VALID_STATES
 from crawler import crawl
-from output import escribir_json
+from output import escribir_json, loguear_resumen_nulos
 from utils.logging_config import setup_logging
 
 logger = logging.getLogger(__name__)
@@ -43,6 +43,7 @@ def main() -> None:
     logger.info("Iniciando crawl: state=%s limit=%s", args.state, args.limit)
     procesos = crawl(state=args.state, limit=args.limit)
     escribir_json(procesos, args.output)
+    loguear_resumen_nulos(procesos)
 
 
 if __name__ == "__main__":

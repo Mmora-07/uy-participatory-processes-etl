@@ -36,3 +36,9 @@ METADATA_LABEL_ENTIDAD = "Grupo promotor"
 
 # --- Reglas de texto ---
 NOMBRE_CORTO_MAX_LEN = 80
+
+# Campos del contrato de datos donde null es un valor esperado (ver
+# documentation.md, Fase 5). Se usa tanto para el resumen de nulos al final
+# del crawl (output.py) como para validar_output.py.
+CAMPOS_NULEABLES = ("fecha_inicio", "fecha_fin", "entidad", "formulario_url")
+LIMITE_MINIMO_PROCESOS = 30
