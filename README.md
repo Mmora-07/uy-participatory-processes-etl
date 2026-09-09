@@ -38,18 +38,18 @@ Esta sección resume las decisiones de mapeo más relevantes. El detalle complet
 ## Arquitectura
 
 ```
-main.py               CLI: parsea args, orquesta crawler -> output. Sin lógica propia.
-config.py              Constantes: URLs, selectores CSS, timeouts, límites, etiquetas.
-crawler.py             Listado paginado, extracción de slugs, build_proceso() por slug.
-parser.py               Extracción de campos desde HTML de una ficha. Sin I/O de red.
+main.py                  CLI: parsea args, orquesta crawler -> output. Sin lógica propia.
+config.py                Constantes: URLs, selectores CSS, timeouts, límites, etiquetas.
+crawler.py               Listado paginado, extracción de slugs, build_proceso() por slug.
+parser.py                Extracción de campos desde HTML de una ficha. Sin I/O de red.
 models.py                Proceso / Componente (pydantic) + serialización a dict/JSON.
-output.py                 Escritura del JSON final + resumen de nulos por campo.
-validar_output.py           Script opcional: valida un output.json ya generado.
-utils/http_client.py       Sesión HTTP, reintentos con backoff exponencial, delay entre requests.
-utils/dates.py               Parseo de fechas es-UY (diccionario manual de meses).
-utils/text.py                 Extracción/normalización de texto (separador entre nodos) y truncado de nombre_corto.
-utils/logging_config.py        Configuración centralizada del logger.
-tests/                           Tests del parser contra fixtures HTML reales.
+output.py                Escritura del JSON final + resumen de nulos por campo.
+validar_output.py        Script opcional: valida un output.json ya generado.
+utils/http_client.py     Sesión HTTP, reintentos con backoff exponencial, delay entre requests.
+utils/dates.py           Parseo de fechas es-UY (diccionario manual de meses).
+utils/text.py            Extracción/normalización de texto (separador entre nodos) y truncado de nombre_corto.
+utils/logging_config.py  Configuración centralizada del logger.
+tests/                   Tests del parser y del crawler contra fixtures HTML reales.
 ```
 
 `parser.py` nunca hace requests — recibe HTML como string (más `slug` y `url`, que el crawler ya conoce) y devuelve un `Proceso`. Eso es lo que permite testear contra fixtures locales en `tests/fixtures/` sin depender de la red. Los reintentos y el delay entre requests viven en `utils/http_client.py`, separados de la orquestación en `crawler.py`; el manejo de errores por proceso individual está aislado en `crawler.build_proceso()`, así el único `try/except Exception` amplio del proyecto vive en un solo lugar bien delimitado y logueado (slug + URL + excepción), sin tumbar la corrida completa ante un fallo puntual.

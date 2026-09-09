@@ -63,7 +63,7 @@ En `tests/fixtures/`, HTML real sin modificar, elegidos para cubrir los casos bo
 | `ficha_aditivos_alimentarios.html` | Plantilla sin `hero-text`: sin título en `h1`, sin bloque de fechas → fallback a `og:title`, fechas `null`. |
 | `ficha_consejo2025.html` | Cero componentes (`formulario_url` y `componentes` → `null`). |
 | `ficha_transporte_publico_montevideo.html` | `Grupo promotor` ausente → `entidad: null` (ver Fase 5.1/5.2). |
-| `listado_per_page_100.html` | Listado completo (86 procesos) con `per_page=100`, para probar la extracción de slugs del crawler. |
+| `listado_per_page_100.html` | Listado completo (86 procesos) con `per_page=100` — usado por `tests/test_crawler.py` para probar `crawler._extraer_slugs()`. |
 
 ---
 
@@ -83,7 +83,7 @@ Se adopta el árbol extendido de `plan.md` §1.4 (config.py, utils/http_client.p
 - **Sobre "7 campos obligatorios":** el enunciado original (fuera de este repo) los cuenta como 7, pero `plan.md` §2.1 lista 8 nombres de campo. Se resuelve tratando `fecha_inicio`/`fecha_fin` como un único concepto ("fecha", con dos valores) — así quedan exactamente 7: `slug`, `nombre_largo`, `nombre_corto`, `fecha` (inicio+fin), `entidad`, `descripcion_url`, `formulario_url`. `componentes` es el campo opcional adicional. Se documenta acá para no tener que reconstruir el razonamiento en la sustentación.
 - Extracción de `entidad` y de las fechas comparten el mismo patrón HTML (`div.participatory-space__metadata-item`), así que `parser._extraer_metadata_item()` es una sola función genérica parametrizada por la etiqueta buscada ("Grupo promotor" / "Fecha de inicio / Fecha de finalización"), en vez de dos funciones casi idénticas.
 - Toda extracción de texto pasa por `utils.text.extract_text()` (separador `" "` entre nodos + normalización), no por `tag.get_text(strip=True)` directo — evita pegar palabras de nodos hijos distintos sin espacio real entre ellos (bug real encontrado en Fase 5.1).
-- 9 tests iniciales contra los 4 fixtures + casos de `utils/dates.py` (fecha completa, ausente, string vacío, formato inesperado) — todos verdes en el primer intento, gracias a haber confirmado los selectores contra HTML real en Fase 0 antes de escribir el parser (no se escribió a ciegas). Se agregó 1 test más en Fase 5.1 (regresión del separador de texto) → 10 tests en total.
+- 9 tests iniciales en `tests/test_parser.py` contra los 4 fixtures + casos de `utils/dates.py` (fecha completa, ausente, string vacío, formato inesperado) — todos verdes en el primer intento, gracias a haber confirmado los selectores contra HTML real en Fase 0 antes de escribir el parser (no se escribió a ciegas). Se agregó 1 test más en Fase 5.1 (regresión del separador de texto) → 10 tests en `test_parser.py` (11 contando `test_crawler.py`, ver Fase 3/5.4).
 
 ## Fase 3 — Crawler
 
@@ -91,6 +91,7 @@ Se adopta el árbol extendido de `plan.md` §1.4 (config.py, utils/http_client.p
 - Reintentos: 3 reintentos (4 intentos totales) con backoff exponencial `0.5 * 2^intento` segundos (0.5s, 1s, 2s), solo ante timeout o 5xx — un 4xx no se reintenta porque no es un error transitorio. Después de una respuesta exitosa se aplica el delay fijo de `REQUEST_DELAY_SECONDS` (0.4s) como buena práctica de scraping, no como medida anti-bot.
 - `build_proceso(client, slug)` aísla fetch + parse + `try/except Exception` amplio para un solo proceso: loguea slug + URL + excepción (`logger.exception`, con traceback) y devuelve `None` sin tumbar la corrida. `crawl()` simplemente descarta los `None`.
 - Validado en vivo contra el sitio real con `--limit 6` y luego el comando de referencia completo (`--state all --limit 30`): trae los 30 procesos, con `entidad`/`formulario_url` en `null` exactamente en los slugs identificados en Fase 0 (`pencti-publica`, `consejo2025`, etc.) — el comportamiento en producción coincide con lo previsto a partir del análisis offline.
+- `crawler._extraer_slugs()` (la única parte de `crawler.py` sin I/O, igual que `parser.py`) tiene su propio test en `tests/test_crawler.py` contra el fixture `listado_per_page_100.html` — confirma 86 slugs, sin duplicados, y que no se lowercasean (`"Homicidios"` presente tal cual). Antes de este test, ese fixture estaba guardado pero sin usar; se agregó al hacer la auditoría final del proyecto (ver Fase 5.4).
 
 ## Fase 4 — CLI
 
@@ -181,6 +182,30 @@ Dos agregados opcionales, sin tocar el comando de referencia (`python main.py --
   Probado deliberadamente con un `output.json` corrompido a propósito (slug duplicado, fecha en formato crudo, `nombre_largo`/`nombre_corto` vacíos) para confirmar que detecta cada problema por separado y sale con código de salida 1.
 
 Uso: `python validar_output.py` (usa `output.json` por defecto) o `python validar_output.py ruta/al/archivo.json`.
+
+### Fase 5.4 — Auditoría final pre-entrega
+
+Repaso completo del proyecto antes de darlo por entregado: código muerto, imports sin usar, módulos desconectados, y consistencia entre `documentation.md`/`README.md` y lo que el código realmente hace.
+
+- **Imports y nombres sin usar:** `pyflakes` sobre los 12 archivos `.py` del proyecto (todos los módulos + `tests/`) no reportó nada — cero imports muertos, cero nombres indefinidos.
+- **Funciones sin llamar:** revisadas a mano todas las funciones públicas de cada módulo contra quién las importa/llama. Todo conectado, con una sola excepción real (ver abajo).
+- **Hallazgo real — fixture guardado pero nunca usado:** `tests/fixtures/listado_per_page_100.html` se guardó en Fase 0 explícitamente "para probar la extracción de slugs del crawler", pero nunca se escribió ese test — `crawler._extraer_slugs()` (la parte de `crawler.py` sin I/O, la única testeable sin red) tenía cero cobertura, y la tabla de fixtures de esta misma documentación afirmaba lo contrario. **Fix:** se agregó `tests/test_crawler.py` (ver Fase 3) — 11 tests en total ahora.
+- **Dependencias:** cada import de `bs4`, `httpx`, `pydantic` y `pytest` en el código tiene su entrada correspondiente en `requirements.txt`, y no hay ninguna entrada en `requirements.txt` que el código no use. `lxml` no se importa por nombre pero es una dependencia real: se pasa como string (`BeautifulSoup(html, "lxml")`) para elegir el parser.
+- **Formato:** la tabla de arquitectura del README (bloque de módulos) se había desalineado por ediciones incrementales línea por línea a lo largo de varias correcciones — las descripciones no arrancaban en la misma columna. Corregido para que alinee como un bloque monoespaciado real.
+- **Esta sección (Fase 6) faltaba:** el documento saltaba de Fase 5.x directo a Fase 7, sin una entrada para la fase del README — agregada abajo por consistencia con el resto del documento ("registra, en orden cronológico por fase...").
+
+**Estado final confirmado en esta auditoría:** 11 tests en verde, `pytest` limpio; corrida completa contra el sitio real regenera `output.json` con 86 procesos; `validar_output.py` pasa sus 6 chequeos sin problemas; `git status` sin archivos sueltos fuera de lo versionado (`notas.txt` gitignoreado a propósito, ver Fase 5.3).
+
+---
+
+## Fase 6 — README
+
+El README (raíz del repo) se escribió para ser autocontenido: alguien que no vio el código debería poder correr el CLI y entender las decisiones de mapeo solo leyéndolo, tal como pide el criterio de cierre de esta fase en `plan.md`. Estructura:
+
+- **Cómo correr:** instalación + el comando de referencia exacto, más 2 variantes de ejemplo (`--state active` sin límite, `--output` a otra ruta) y cómo correr los tests. Se agregó una línea sobre los extras opcionales (resumen de nulos automático, `validar_output.py`) sin mezclarlos con el comando de referencia, para que quede claro que no son parte de lo que se evalúa.
+- **Decisiones y supuestos:** la sección que más pesa según el enunciado — 6 bullets (`nombre_corto`, fechas, `entidad`, `formulario_url`, vía alternativa descartada, slugs con mayúscula), cada uno con el número real detrás (ej. "23 de 86") en vez de una afirmación sin evidencia. El detalle completo con la evidencia queda en este archivo, no en el README, para mantenerlo corto.
+- **Arquitectura:** un árbol de una línea por módulo + un párrafo explicando los tres principios de diseño que más se repiten en la sustentación (parser sin I/O, error handling acotado a un solo lugar, reintentos separados de la orquestación).
+- **Pregunta de diseño:** no se duplica el texto — apunta a la Fase 7 de este archivo.
 
 ---
 
