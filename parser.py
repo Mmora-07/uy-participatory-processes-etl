@@ -12,7 +12,6 @@ from bs4 import BeautifulSoup
 
 from config import (
     BASE_URL,
-    HERO_SLOGAN_SELECTOR,
     HERO_TITLE_SELECTOR,
     METADATA_ITEM_SELECTOR,
     METADATA_ITEM_TITLE_SELECTOR,
@@ -67,27 +66,6 @@ def _extraer_metadata_item(soup: BeautifulSoup, label: str) -> str | None:
     return None
 
 
-def _extraer_entidad(soup: BeautifulSoup) -> str | None:
-    """Grupo promotor declarado en el bloque de metadata (fuente primaria,
-    estructurada con una etiqueta explícita). En ~27% de las fichas reales
-    ese bloque no existe, pero la entidad promotora igual aparece en pantalla
-    como bajada del título (.participatory-space__hero-slogan) -> fallback.
-    Ninguna ficha real observada carece de ambas fuentes a la vez, pero el
-    contrato sigue siendo None si eso llegara a pasar.
-
-    Nota: el fallback es texto libre sin estructura fija -- a veces trae
-    prefijos como "Consulta pública ||" en vez de solo el nombre de la
-    entidad (ver documentation.md, Fase 5.1). Se documenta como limitación
-    conocida en vez de intentar recortarlo con heurísticas frágiles.
-    """
-    entidad = _extraer_metadata_item(soup, METADATA_LABEL_ENTIDAD)
-    if entidad:
-        return entidad
-
-    slogan = soup.select_one(HERO_SLOGAN_SELECTOR)
-    return extract_text(slogan) if slogan else None
-
-
 def _extraer_componentes(soup: BeautifulSoup) -> list[Componente]:
     componentes = []
     for nav_item in soup.select(NAV_ITEM_SELECTOR):
@@ -109,7 +87,7 @@ def parse_ficha(html: str, slug: str, url: str) -> Proceso:
     nombre_largo = _extraer_nombre_largo(soup)
     fechas_raw = _extraer_metadata_item(soup, METADATA_LABEL_FECHAS)
     fecha_inicio, fecha_fin = parse_rango_fechas(fechas_raw)
-    entidad = _extraer_entidad(soup)
+    entidad = _extraer_metadata_item(soup, METADATA_LABEL_ENTIDAD)
     componentes = _extraer_componentes(soup)
 
     return Proceso(

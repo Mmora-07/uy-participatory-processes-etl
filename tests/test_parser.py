@@ -63,13 +63,13 @@ def test_ficha_sin_componentes():
     assert proceso.entidad is not None
 
 
-def test_ficha_entidad_via_fallback_a_hero_slogan():
-    """~27% de las fichas reales no tienen el bloque "Grupo promotor", pero
-    la entidad promotora igual se muestra en pantalla como bajada del título
-    (.participatory-space__hero-slogan). Bug real encontrado por inspección
-    manual: esta ficha mostraba "Defensoría de las vecinas y vecinos de
-    Montevideo" en el navegador pero el parser devolvía entidad=None antes
-    de agregar el fallback (ver documentation.md, Fase 5.1).
+def test_ficha_sin_entidad():
+    """entidad viene únicamente del bloque estructurado "Grupo promotor"
+    (así lo pide el enunciado explícitamente: "campo estructurado real, no
+    texto libre"). ~27% de las fichas reales no tienen ese bloque -> null,
+    aunque la página muestre el nombre de la entidad en otro lugar como
+    texto libre (ver documentation.md, Fase 5.1/5.2): se decidió no usar esa
+    fuente para no violar el contrato de campo estructurado pedido.
     """
     html = _cargar_fixture("ficha_transporte_publico_montevideo.html")
     proceso = parse_ficha(
@@ -78,19 +78,9 @@ def test_ficha_entidad_via_fallback_a_hero_slogan():
         url="https://example.org/processes/transporte-publico-montevideo",
     )
 
-    assert proceso.entidad == "Defensoría de las vecinas y vecinos de Montevideo"
+    assert proceso.entidad is None
     assert proceso.fecha_inicio is not None
     assert proceso.componentes is not None
-
-
-def test_ficha_sin_entidad_ni_slogan():
-    """Caso defensivo sin evidencia real (0/86 fichas relevadas carecen de
-    ambas fuentes) -- fixture sintético, ver su comentario para el detalle.
-    """
-    html = _cargar_fixture("sintetico_sin_entidad.html")
-    proceso = parse_ficha(html, slug="proceso-de-prueba", url="https://example.org/processes/proceso-de-prueba")
-
-    assert proceso.entidad is None
 
 
 def test_extract_text_no_pega_nodos_sin_espacio():

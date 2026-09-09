@@ -27,7 +27,6 @@ USER_AGENT = "uy-participatory-processes-etl/1.0"
 
 # --- Selectores CSS (confirmados contra 86 fichas reales, ver documentation.md) ---
 HERO_TITLE_SELECTOR = ".participatory-space__hero-text h1"
-HERO_SLOGAN_SELECTOR = ".participatory-space__hero-slogan"
 METADATA_ITEM_SELECTOR = ".participatory-space__metadata-item"
 METADATA_ITEM_TITLE_SELECTOR = ".participatory-space__metadata-item-title span"
 NAV_ITEM_SELECTOR = "a.participatory-space__nav-item"
